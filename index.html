@@ -1,35 +1,126 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2345看图王 电脑高清版 - 官方资源与在线工具</title>
-<meta name="description" content="2345看图王相关资源导航：官网入口与免费在线小工具。2345看图王是一款图片查看工具，支持多种图片格式的快速浏览与管理。">
+<title>图片 EXIF 与格式检视器 — 本地查看照片尺寸/格式/元数据</title>
+<meta name="description" content="免费在线工具:在浏览器本地读取图片的真实格式(按文件签名)、尺寸、EXIF 元数据(相机/曝光/GPS)与颜色信息,全程不上传服务器。">
 <link rel="canonical" href="https://supermarka.github.io/">
-<meta property="og:title" content="2345看图王 电脑高清版">
-<meta property="og:description" content="2345看图王官网入口与免费在线小工具。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://supermarka.github.io/">
-<style>:root{--b:#1a73e8}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:760px;margin:0 auto;padding:24px;color:#1f2937;line-height:1.7;background:#fff}h1{color:var(--b);font-size:1.6rem;margin:.2em 0}h2{font-size:1.2rem;margin-top:1.6em;border-left:4px solid var(--b);padding-left:10px}.card{border:1px solid #e5e7eb;border-radius:10px;padding:18px;margin:16px 0;background:#fafafa}a{color:var(--b)}footer{margin-top:40px;padding-top:16px;border-top:1px solid #eee;color:#9ca3af;font-size:.85rem}</style>
-</head>
-<body>
-<h1>2345看图王</h1>
-<p>2345看图王是一款图片查看工具，支持多种图片格式的快速浏览与管理。</p>
-<div class="card">
-<h2 style="margin-top:0;border:0;padding:0">官方网站</h2>
-<p>访问 2345看图王 官方网站，了解完整功能与下载方式：<br>
-<a href="https://viewer2345.com/"><strong>viewer2345.com</strong></a></p>
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "图片 EXIF 与格式检视器",
+   "url": "https://supermarka.github.io/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "zh-Hans",
+   "description": "免费在线工具:在浏览器本地读取图片的真实格式(按文件签名)、尺寸、EXIF 元数据(相机/曝光/GPS)与颜色信息,全程不上传服务器。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "zh-Hans",
+   "url": "https://supermarka.github.io/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "图片会上传到服务器吗?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不会。本工具用浏览器的 FileReader 接口在本地读取与解析,图片不离开你的设备,也不上传到任何服务器。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "为什么我的图片没有 EXIF?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "截图、网络下载并被重新压缩的图片、以及多数 PNG 通常不含 EXIF;社交平台上传时也常主动剥除 EXIF 以保护隐私。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "扩展名和「真实格式」为什么不一样?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "扩展名只是文件名的一部分,可被随意修改。本工具读文件开头的签名字节来判断真实格式,因此把 .png 改名为 .jpg 也能被识破。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "能看到拍摄地点吗?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "如果照片保留了 GPS 信息(常见于手机直出原图),工具会显示经纬度。多数经社交平台压缩的图已无 GPS。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "支持 HEIC / RAW 吗?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "工具能按签名识别 HEIC/HEIF 等格式并显示文件信息;浏览器对 HEIC 的解码支持有限,缩略图可能无法显示。要在 Windows 流畅查看,可用 2345看图王。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "数据准确吗?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "格式签名、尺寸与 EXIF 字段直接读自文件,准确可靠;「2026 估算」一节为趋势估算,已明确标注非一手实测。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <strong>简体中文</strong> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>图片 EXIF 与格式检视器</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_zh.webp"><img src="/img/cover_zh.png" alt="图片 EXIF 与格式检视器示意图,展示从照片中读取的相机与曝光元数据" fetchpriority="high" width="1120" height="640"></picture><figcaption>图:图片 EXIF 与格式检视器 —— 本地读取格式、尺寸与相机元数据</figcaption></figure>
+<p>把照片或图片文件拖到下面,即可读出它的真实格式(按文件签名判断,而非只看扩展名)、像素尺寸、文件大小、颜色类型,以及相机品牌型号、曝光、ISO、GPS 等 EXIF 元数据。全部用浏览器的 FileReader 接口在本地解析,任何图片都不会上传。</p>
+<div id="drop" role="button" tabindex="0">把图片拖到这里,或点击选择</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">隐私:图片只在你的浏览器内读取与解析,不上传到任何服务器。</p>
+<div id="out"></div>
+<h2>支持的格式与「按签名识别」原理</h2>
+<p>看图软件常按扩展名猜格式,但扩展名可被随意改名。更可靠的做法是读文件开头的几个「签名字节」(magic number)。下表是本工具识别的主要图片格式及其签名:</p>
+<table class="fmt"><tr><th>格式</th><th>文件签名(十六进制)</th><th>常见用途</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>网络与相机出片最通用的有损封装</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>无损、支持透明,适合截图与图标</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>动图与简单图形,256 色调色板</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>谷歌推出的网络图片格式,有损/无损皆可</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>Windows 位图,通常不压缩</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>印刷与存档,常含多页与高位深</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>苹果设备默认照片格式,基于 HEVC 压缩</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>新一代网络图片格式,压缩率高</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>Windows 图标,可含多尺寸</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>Photoshop 分层源文件</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>图1:从选择图片到本地读出元数据的流程(全程不联网)</figcaption></figure>
+<h2>EXIF 元数据是什么、怎么读</h2>
+<p>EXIF(可交换图像文件格式)是相机和手机写进照片里的一段元数据,常见于 JPEG、TIFF、部分 HEIC。它通常藏在 JPEG 的 APP1 段里,以 TIFF 的 IFD 目录结构存放相机品牌、型号、拍摄时间、曝光、光圈、ISO、焦距,有时还有 GPS 经纬度。截图、网络压缩图、多数 PNG 往往已被剥掉 EXIF。</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_zh.webp"><img src="/img/board_zh.png" alt="JPEG 文件结构示意图,EXIF 元数据位于 APP1 段" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>图:一个 JPEG 文件的结构 —— EXIF 藏在 APP1 段的 TIFF 目录里</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>图2:一个 JPEG 文件的结构,EXIF 藏在 APP1 段的 TIFF 目录里</figcaption></figure>
+<h2>2026 图片格式与元数据估算</h2>
+<section id="i4data" class="estimate"><span class="tag">估算·非一手实测</span><ul><li>截至 2026 年的估算:JPEG 仍是网页与相机直出最主流的封装格式,网页图片中占比仍居前列。</li><li>截至 2026 年的估算:自 2017 年起,iPhone 默认以 HEIC 拍照,近年新机出片以 HEIC 为主,导入 Windows 常需转码。</li><li>截至 2026 年的估算:WebP 与 AVIF 在网页图片中的采用率持续上升,但相机端仍少见。</li><li>截至 2026 年的估算:单张手机照片常见 2–5 MB、1200 万–5000 万像素;社交平台上传后多被重新压缩并剥除 EXIF。</li></ul></section>
+<h2>常见问题</h2>
+<details class="faq"><summary>图片会上传到服务器吗?</summary><p>不会。本工具用浏览器的 FileReader 接口在本地读取与解析,图片不离开你的设备,也不上传到任何服务器。</p></details><details class="faq"><summary>为什么我的图片没有 EXIF?</summary><p>截图、网络下载并被重新压缩的图片、以及多数 PNG 通常不含 EXIF;社交平台上传时也常主动剥除 EXIF 以保护隐私。</p></details><details class="faq"><summary>扩展名和「真实格式」为什么不一样?</summary><p>扩展名只是文件名的一部分,可被随意修改。本工具读文件开头的签名字节来判断真实格式,因此把 .png 改名为 .jpg 也能被识破。</p></details><details class="faq"><summary>能看到拍摄地点吗?</summary><p>如果照片保留了 GPS 信息(常见于手机直出原图),工具会显示经纬度。多数经社交平台压缩的图已无 GPS。</p></details><details class="faq"><summary>支持 HEIC / RAW 吗?</summary><p>工具能按签名识别 HEIC/HEIF 等格式并显示文件信息;浏览器对 HEIC 的解码支持有限,缩略图可能无法显示。要在 Windows 流畅查看,可用 2345看图王。</p></details><details class="faq"><summary>数据准确吗?</summary><p>格式签名、尺寸与 EXIF 字段直接读自文件,准确可靠;「2026 估算」一节为趋势估算,已明确标注非一手实测。</p></details>
+<div class="related"><h2>相关链接</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">下载 2345看图王(Windows 官方版)</a></li><li><a href="https://www.cipa.jp/std/std-sec_e.html" rel="nofollow noopener" target="_blank">Exif 标准(CIPA DC-008)</a></li><li><a href="https://zh.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">维基百科:Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">维基百科:文件签名列表</a></li><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN:FileReader 接口</a></li><li><a href="https://learn.microsoft.com/zh-cn/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft:Windows 图像编解码(WIC)</a></li><li><a href="https://support.apple.com/zh-cn/HT207022" rel="nofollow noopener" target="_blank">Apple:关于 HEIF/HEVC</a></li></ul></div>
+</main>
+<footer>资料整理自 Exif 标准(CIPA DC-008)、Wikipedia 文件签名列表、MDN FileReader 文档与 Microsoft/Apple 官方支持页;格式签名与 EXIF 字段直接读自文件。本页为开源工具,仅供参考。<br><a href="/about/">编辑部</a> · 開源 / open source · MIT</footer>
 </div>
-<div class="card">
-<h2 style="margin-top:0;border:0;padding:0">免费在线小工具</h2>
-<p>本站还为 2345看图王 用户提供一个纯本地运行的小工具（数据不上传）：<br>
-<a href="https://supermarka.github.io/viewer2345-image-inspector/">图片信息查看器 →</a></p>
-</div>
-<h2>关于 2345看图王</h2>
-<p>2345看图王是一款图片查看工具，支持多种图片格式的快速浏览与管理。 更多信息与下载请访问 <a href="https://viewer2345.com/">2345看图王官网</a>。</p>
-<footer>
-<p>本页为 2345看图王 相关资源导航页，工具均在本地浏览器处理、不上传服务器。</p>
-<p>官网：<a href="https://viewer2345.com/">viewer2345.com</a> · 最后更新：2026-06</p>
-</footer>
-</body>
-</html>
+<script>window.VL={"basic": "基本信息", "exifhead": "EXIF 元数据", "noexif": "该图片不含 EXIF 元数据(常见于截图、PNG、网络压缩图)。", "filename": "文件名", "format": "真实格式", "ext_mismatch": "(扩展名与签名不一致)", "dimensions": "尺寸(像素)", "megapixels": "百万像素", "aspect": "宽高比", "filesize": "文件大小", "modified": "修改时间", "colortype": "颜色类型", "bitdepth": "位深", "alpha": "含透明通道", "make": "相机品牌(Make)", "model": "相机型号(Model)", "datetime": "拍摄时间(DateTimeOriginal)", "exposure": "曝光时间(ExposureTime)", "fnumber": "光圈(FNumber)", "iso": "感光度(ISO)", "focal": "焦距(FocalLength)", "lens": "镜头(LensModel)", "orientation": "方向(Orientation)", "software": "软件(Software)", "gps": "GPS 坐标", "yes": "是", "no": "否"};</script>
+<script src="/app.js"></script>
+</body></html>
