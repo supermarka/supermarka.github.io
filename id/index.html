@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image EXIF &amp; Format Inspector — melihat metadata foto secara lokal</title>
+<meta name="description" content="Alat online gratis untuk memeriksa format asli gambar (berdasarkan tanda tangan file), dimensi, metadata EXIF (kamera, eksposur, GPS) dan warna — semuanya dibaca secara lokal di browser Anda, tidak ada yang diunggah.">
+<link rel="canonical" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "EXIF Gambar & Pemeriksa Format",
+   "url": "https://supermarka.github.io/id/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "id",
+   "description": "Alat online gratis untuk memeriksa format asli gambar (berdasarkan tanda tangan file), dimensi, metadata EXIF (kamera, eksposur, GPS) dan warna — semuanya dibaca secara lokal di browser Anda, tidak ada yang diunggah.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "id",
+   "url": "https://supermarka.github.io/id/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Apakah gambar saya diunggah ke server?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tidak. Alat ini menggunakan API FileReader browser untuk membaca dan mengurai gambar secara lokal; gambar tidak pernah meninggalkan perangkat Anda dan tidak diunggah ke server mana pun."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mengapa gambar saya tidak memiliki EXIF?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tangkapan layar, gambar diunduh dan dikompres ulang dari web, dan sebagian besar PNG biasanya tidak membawa EXIF; platform sosial juga menghapus EXIF ​​pada unggahan untuk melindungi privasi."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mengapa ekstensi berbeda dari format sebenarnya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ekstensi hanyalah bagian dari nama file dan dapat diubah dengan bebas. Alat ini membaca byte tanda tangan di awal file, sehingga .png yang diubah namanya menjadi .jpg pun terdeteksi dengan benar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bisakah saya melihat di mana foto itu diambil?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jika foto menyimpan data GPS-nya (umumnya terdapat pada ponsel asli yang belum diedit), alat akan menunjukkan koordinatnya. Sebagian besar gambar yang dikompresi oleh platform sosial tidak lagi membawa GPS."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Apakah ini mendukung HEIC/RAW?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Alat ini mendeteksi HEIC/HEIF dan format serupa dengan tanda tangan dan menampilkan info file; dukungan browser untuk mendekode HEIC terbatas, sehingga thumbnail mungkin tidak ditampilkan. Untuk kelancaran tampilan di Windows Anda dapat menggunakan 2345 Picture Viewer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Apakah datanya akurat?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tanda tangan format, dimensi, dan bidang EXIF ​​dibaca langsung dari file dan dapat diandalkan; bagian perkiraan tahun 2026 merupakan perkiraan tren dan diberi label jelas sebagai bukan pengukuran langsung."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <strong>Bahasa Indonesia</strong> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>EXIF Gambar &amp; Pemeriksa Format</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_id.webp"><img src="/img/cover_id.png" alt="Ilustrasi Image EXIF &amp; Format Inspector menampilkan metadata kamera dan eksposur yang dibaca dari foto" fetchpriority="high" width="1120" height="640"></picture><figcaption>Gambar: Image EXIF &amp; Format Inspector — membaca format, dimensi, dan metadata kamera secara lokal</figcaption></figure>
+<p>Letakkan file foto atau gambar di bawah untuk membaca format aslinya (terdeteksi berdasarkan tanda tangan file, bukan hanya ekstensi), dimensi piksel, ukuran file, jenis warna, dan metadata EXIF seperti merek dan model kamera, eksposur, ISO, dan GPS. Semuanya diuraikan secara lokal di browser Anda dengan FileReader API — tidak ada gambar yang diunggah.</p>
+<div id="drop" role="button" tabindex="0">Letakkan gambar di sini, atau klik untuk memilih</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">Privasi: gambar dibaca dan diurai hanya di dalam browser Anda dan tidak pernah diunggah ke server mana pun.</p>
+<div id="out"></div>
+<h2>Format yang didukung dan cara kerja deteksi tanda tangan</h2>
+<p>Pemirsa gambar sering kali menebak format dari ekstensi file, namun ekstensi dapat diubah namanya menjadi apa saja. Pendekatan yang lebih dapat diandalkan adalah dengan membaca beberapa byte tanda tangan pertama (angka ajaib). Tabel di bawah mencantumkan format gambar utama yang dideteksi alat ini dan tanda tangannya:</p>
+<table class="fmt"><tr><th>Format</th><th>Tanda tangan file (hex)</th><th>Penggunaan yang umum</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>Wadah lossy paling universal untuk web dan kamera</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>Lossless dengan transparansi; ideal untuk tangkapan layar dan ikon</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>Animasi dan grafik sederhana; Palet 256 warna</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>format gambar web Google; baik lossy maupun lossless</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>Bitmap Windows, biasanya tidak terkompresi</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>Cetak dan arsip; sering kali multi-halaman dan kedalaman bit tinggi</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>Format foto default di perangkat Apple, berdasarkan HEVC</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>Format gambar web generasi berikutnya dengan kompresi tinggi</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>Ikon Windows, mungkin berisi berbagai ukuran</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>File sumber Photoshop berlapis</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>Gambar 1: dari memilih gambar hingga membaca metadatanya secara lokal (tidak ada jaringan yang terlibat)</figcaption></figure>
+<h2>Apa itu metadata EXIF dan cara membacanya</h2>
+<p>EXIF (Exchangeable Image File Format) adalah blok metadata yang ditulis kamera dan ponsel ke dalam foto, biasanya dalam format JPEG, TIFF, dan beberapa file HEIC. Biasanya berada di segmen JPEG APP1, disimpan sebagai direktori TIFF IFD yang menyimpan merek kamera, model, waktu pengambilan, pencahayaan, bukaan, ISO, dan panjang fokus — dan terkadang garis lintang dan bujur GPS. Tangkapan layar, gambar yang dikompresi web, dan sebagian besar PNG biasanya EXIF-nya dihilangkan.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_id.webp"><img src="/img/board_id.png" alt="Diagram struktur file JPEG dengan metadata EXIF di segmen APP1" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>Gambar: struktur file JPEG — EXIF berada di direktori TIFF pada segmen APP1</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>Gambar 2: struktur file JPEG — EXIF berada di dalam direktori TIFF pada segmen APP1</figcaption></figure>
+<h2>Perkiraan tahun 2026 untuk format gambar dan metadata</h2>
+<section id="i4data" class="estimate"><span class="tag">perkiraan · bukan pengukuran langsung</span><ul><li>Perkiraan pada tahun 2026: JPEG tetap menjadi wadah paling umum untuk web dan pengambilan gambar langsung dari kamera, masih memimpin di antara gambar web.</li><li>Perkiraan pada tahun 2026: sejak tahun 2017, iPhone memotret dalam HEIC secara default, dan model terbaru sebagian besar menghasilkan HEIC, yang sering kali memerlukan transcoding pada Windows.</li><li>Perkiraan pada tahun 2026: Adopsi WebP dan AVIF pada gambar web terus meningkat, sementara kamera masih jarang menggunakannya.</li><li>Perkiraan pada tahun 2026: satu foto ponsel biasanya berukuran 2–5 MB pada 12–50 megapiksel; platform sosial biasanya mengompres ulang unggahan dan menghapus EXIF.</li></ul></section>
+<h2>Pertanyaan yang sering diajukan</h2>
+<details class="faq"><summary>Apakah gambar saya diunggah ke server?</summary><p>Tidak. Alat ini menggunakan API FileReader browser untuk membaca dan mengurai gambar secara lokal; gambar tidak pernah meninggalkan perangkat Anda dan tidak diunggah ke server mana pun.</p></details><details class="faq"><summary>Mengapa gambar saya tidak memiliki EXIF?</summary><p>Tangkapan layar, gambar diunduh dan dikompres ulang dari web, dan sebagian besar PNG biasanya tidak membawa EXIF; platform sosial juga menghapus EXIF ​​pada unggahan untuk melindungi privasi.</p></details><details class="faq"><summary>Mengapa ekstensi berbeda dari format sebenarnya?</summary><p>Ekstensi hanyalah bagian dari nama file dan dapat diubah dengan bebas. Alat ini membaca byte tanda tangan di awal file, sehingga .png yang diubah namanya menjadi .jpg pun terdeteksi dengan benar.</p></details><details class="faq"><summary>Bisakah saya melihat di mana foto itu diambil?</summary><p>Jika foto menyimpan data GPS-nya (umumnya terdapat pada ponsel asli yang belum diedit), alat akan menunjukkan koordinatnya. Sebagian besar gambar yang dikompresi oleh platform sosial tidak lagi membawa GPS.</p></details><details class="faq"><summary>Apakah ini mendukung HEIC/RAW?</summary><p>Alat ini mendeteksi HEIC/HEIF dan format serupa dengan tanda tangan dan menampilkan info file; dukungan browser untuk mendekode HEIC terbatas, sehingga thumbnail mungkin tidak ditampilkan. Untuk kelancaran tampilan di Windows Anda dapat menggunakan 2345 Picture Viewer.</p></details><details class="faq"><summary>Apakah datanya akurat?</summary><p>Tanda tangan format, dimensi, dan bidang EXIF ​​dibaca langsung dari file dan dapat diandalkan; bagian perkiraan tahun 2026 merupakan perkiraan tren dan diberi label jelas sebagai bukan pengukuran langsung.</p></details>
+<div class="related"><h2>Tautan terkait</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">Unduh 2345 Picture Viewer (versi Windows resmi)</a></li><li><a href="https://www.cipa.jp/std/std-sec_e.html" rel="nofollow noopener" target="_blank">Exif standard (CIPA DC-008)</a></li><li><a href="https://en.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">Wikipedia: Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">Wikipedia: List of file signatures</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN: FileReader API</a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft: Windows Imaging Component (WIC)</a></li><li><a href="https://support.apple.com/en-us/HT207022" rel="nofollow noopener" target="_blank">Apple: About HEIF/HEVC</a></li></ul></div>
+</main>
+<footer>Dikompilasi dari standar Exif (CIPA DC-008), daftar tanda tangan file Wikipedia, dokumen MDN FileReader dan halaman dukungan resmi Microsoft/Apple; tanda tangan format dan bidang EXIF ​​dibaca langsung dari file. Halaman ini adalah alat sumber terbuka, hanya untuk referensi.<br><a href="/about/">Tim redaksi</a> · 開源 / open source · MIT</footer>
+</div>
+<script>window.VL={"basic": "Informasi dasar", "exifhead": "Metadata EXIF", "noexif": "Gambar ini tidak mengandung metadata EXIF (umum untuk tangkapan layar, PNG, dan gambar yang dikompresi web).", "filename": "Nama berkas", "format": "Format nyata", "ext_mismatch": "(ekstensi tidak cocok dengan tanda tangan)", "dimensions": "Dimensi (px)", "megapixels": "Megapiksel", "aspect": "Rasio aspek", "filesize": "Ukuran berkas", "modified": "Terakhir diubah", "colortype": "Jenis warna", "bitdepth": "Kedalaman sedikit", "alpha": "Memiliki saluran alfa", "make": "Pembuatan kamera (Pembuatan)", "model": "Model kamera (Model)", "datetime": "Diambil pada (DateTimeOriginal)", "exposure": "Waktu pemaparan (Waktu Eksposur)", "fnumber": "Bukaan (Nomor F)", "iso": "Sensitivitas (ISO)", "focal": "Panjang fokus (Panjang Fokus)", "lens": "Lensa (Model Lensa)", "orientation": "Orientasi", "software": "Perangkat lunak", "gps": "Koordinat GPS", "yes": "Ya", "no": "Tidak"};</script>
+<script src="/app.js"></script>
+</body></html>
