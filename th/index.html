@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image EXIF &amp; Format Inspector — ดูข้อมูลเมตาของรูปภาพในเครื่อง</title>
+<meta name="description" content="เครื่องมือออนไลน์ฟรีเพื่อตรวจสอบรูปแบบที่แท้จริงของภาพ (ตามลายเซ็นไฟล์), ขนาด, ข้อมูลเมตา EXIF ​​(กล้อง, ค่าแสง, GPS) และสี - ทั้งหมดนี้อ่านในเบราว์เซอร์ของคุณโดยไม่มีการอัปโหลด">
+<link rel="canonical" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "รูปภาพ EXIF และตัวตรวจสอบรูปแบบ",
+   "url": "https://supermarka.github.io/th/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "th",
+   "description": "เครื่องมือออนไลน์ฟรีเพื่อตรวจสอบรูปแบบที่แท้จริงของภาพ (ตามลายเซ็นไฟล์), ขนาด, ข้อมูลเมตา EXIF ​​(กล้อง, ค่าแสง, GPS) และสี - ทั้งหมดนี้อ่านในเบราว์เซอร์ของคุณโดยไม่มีการอัปโหลด",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "th",
+   "url": "https://supermarka.github.io/th/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "รูปภาพของฉันถูกอัพโหลดไปยังเซิร์ฟเวอร์หรือไม่?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ไม่ เครื่องมือนี้ใช้เบราว์เซอร์ FileReader API เพื่ออ่านและแยกวิเคราะห์รูปภาพในเครื่อง รูปภาพจะไม่ออกจากอุปกรณ์ของคุณและไม่ได้อัปโหลดไปยังเซิร์ฟเวอร์ใด ๆ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ทำไมรูปภาพของฉันถึงไม่มี EXIF",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ภาพหน้าจอ รูปภาพที่ดาวน์โหลดและบีบอัดซ้ำจากเว็บ และ PNG ส่วนใหญ่มักจะไม่มี EXIF แพลตฟอร์มโซเชียลยังตัด EXIF ​​ในการอัปโหลดเพื่อปกป้องความเป็นส่วนตัว"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "เหตุใดส่วนขยายจึงแตกต่างจากรูปแบบจริง",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "นามสกุลเป็นเพียงส่วนหนึ่งของชื่อไฟล์และสามารถเปลี่ยนแปลงได้อย่างอิสระ เครื่องมือนี้จะอ่านไบต์ลายเซ็นที่จุดเริ่มต้นของไฟล์ ดังนั้นแม้แต่ .png ที่เปลี่ยนชื่อเป็น .jpg ก็ยังตรวจพบได้อย่างถูกต้อง"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ฉันขอดูได้ไหมว่าถ่ายรูปที่ไหน?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "หากภาพถ่ายเก็บข้อมูล GPS ไว้ (โดยทั่วไปสำหรับต้นฉบับของโทรศัพท์ที่ไม่มีการตัดต่อ) เครื่องมือจะแสดงพิกัด รูปภาพส่วนใหญ่ที่บีบอัดโดยแพลตฟอร์มโซเชียลไม่มี GPS อีกต่อไป"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "รองรับ HEIC / RAW หรือไม่",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "เครื่องมือตรวจจับ HEIC/HEIF และรูปแบบที่คล้ายกันด้วยลายเซ็นและแสดงข้อมูลไฟล์ การสนับสนุนเบราว์เซอร์สำหรับการถอดรหัส HEIC นั้นมีจำกัด ดังนั้นภาพขนาดย่ออาจไม่แสดงผล เพื่อการรับชมที่ราบรื่นบน Windows คุณสามารถใช้ 2345 Picture Viewer"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ข้อมูลถูกต้องหรือไม่?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ลายเซ็นรูปแบบ ขนาด และฟิลด์ EXIF ​​ถูกอ่านโดยตรงจากไฟล์และเชื่อถือได้ ส่วนการประมาณการปี 2026 เป็นการประมาณการแนวโน้มและมีป้ายกำกับชัดเจนว่าไม่ใช่การวัดโดยตรง"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <strong>ไทย</strong> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>รูปภาพ EXIF และตัวตรวจสอบรูปแบบ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_th.webp"><img src="/img/cover_th.png" alt="ภาพประกอบของ Image EXIF และตัวตรวจสอบรูปแบบซึ่งแสดงข้อมูลเมตาของกล้องและข้อมูลการรับแสงที่อ่านจากภาพถ่าย" fetchpriority="high" width="1120" height="640"></picture><figcaption>รูป: Image EXIF &amp; Format Inspector — อ่านรูปแบบ ขนาด และข้อมูลเมตาของกล้องในเครื่อง</figcaption></figure>
+<p>วางไฟล์รูปภาพหรือรูปภาพด้านล่างเพื่ออ่านรูปแบบจริง (ตรวจพบโดยลายเซ็นของไฟล์ ไม่ใช่แค่ส่วนขยาย) ขนาดพิกเซล ขนาดไฟล์ ประเภทสี และข้อมูลเมตา EXIF เช่น ยี่ห้อและรุ่นของกล้อง ค่าแสง ISO และ GPS ทุกอย่างจะถูกแยกวิเคราะห์ในเบราว์เซอร์ของคุณด้วย FileReader API — ไม่มีการอัพโหลดรูปภาพเลย</p>
+<div id="drop" role="button" tabindex="0">วางรูปภาพที่นี่ หรือคลิกเพื่อเลือก</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">ความเป็นส่วนตัว: รูปภาพจะถูกอ่านและแยกวิเคราะห์ภายในเบราว์เซอร์ของคุณเท่านั้น และจะไม่มีการอัปโหลดไปยังเซิร์ฟเวอร์ใดๆ</p>
+<div id="out"></div>
+<h2>รูปแบบที่รองรับและวิธีการตรวจสอบลายเซ็นทำงาน</h2>
+<p>ผู้ดูรูปภาพมักจะเดารูปแบบจากนามสกุลไฟล์ แต่นามสกุลสามารถเปลี่ยนชื่อเป็นอะไรก็ได้ แนวทางที่เชื่อถือได้มากกว่าคือการอ่านไบต์ลายเซ็นสองสามตัวแรก (ตัวเลขมหัศจรรย์) ตารางด้านล่างแสดงรายการรูปแบบรูปภาพหลักที่เครื่องมือนี้ตรวจพบและลายเซ็น:</p>
+<table class="fmt"><tr><th>รูปแบบ</th><th>ลายเซ็นไฟล์ (ฐานสิบหก)</th><th>การใช้งานทั่วไป</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>คอนเทนเนอร์สูญเสียที่เป็นสากลที่สุดสำหรับเว็บและกล้อง</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>ไม่สูญเสียความโปร่งใส เหมาะสำหรับภาพหน้าจอและไอคอน</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>แอนิเมชั่นและกราฟิกที่เรียบง่าย จานสี 256 สี</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>รูปแบบภาพเว็บของ Google ทั้งขาดทุนและไม่สูญเสีย</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>บิตแมปของ Windows มักจะไม่มีการบีบอัด</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>พิมพ์และจดหมายเหตุ; มักมีหลายหน้าและมีความลึกบิตสูง</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>รูปแบบรูปภาพเริ่มต้นบนอุปกรณ์ Apple อิงตาม HEVC</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>รูปแบบภาพเว็บเจเนอเรชันใหม่พร้อมการบีบอัดสูง</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>ไอคอน Windows อาจมีหลายขนาด</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>ไฟล์ต้นฉบับ Photoshop แบบเลเยอร์</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>รูปที่ 1: จากการเลือกรูปภาพไปจนถึงการอ่านข้อมูลเมตาในเครื่อง (ไม่มีเครือข่ายที่เกี่ยวข้อง)</figcaption></figure>
+<h2>ข้อมูลเมตา EXIF คืออะไรและอ่านอย่างไร</h2>
+<p>EXIF (รูปแบบไฟล์ภาพที่แลกเปลี่ยนได้) คือบล็อกของข้อมูลเมตาที่กล้องและโทรศัพท์เขียนลงในภาพถ่าย โดยทั่วไปจะเป็นไฟล์ JPEG, TIFF และ HEIC บางไฟล์ โดยปกติจะอยู่ในเซ็กเมนต์ JPEG APP1 ซึ่งจัดเก็บเป็นไดเร็กทอรี TIFF IFD ที่เก็บยี่ห้อ รุ่น เวลาถ่ายภาพ ค่ารับแสง ค่ารูรับแสง ISO และทางยาวโฟกัส และบางครั้งก็มี GPS ละติจูดและลองจิจูด ภาพหน้าจอ รูปภาพที่บีบอัดจากเว็บ และ PNG ส่วนใหญ่มักจะไม่มี EXIF ​​​​</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_th.webp"><img src="/img/board_th.png" alt="ไดอะแกรมของโครงสร้างไฟล์ JPEG พร้อมข้อมูลเมตา EXIF ในส่วน APP1" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>รูป: โครงสร้างของไฟล์ JPEG — EXIF อยู่ในไดเร็กทอรี TIFF ของเซ็กเมนต์ APP1</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>รูปที่ 2: โครงสร้างของไฟล์ JPEG — EXIF อยู่ในไดเร็กทอรี TIFF ของเซ็กเมนต์ APP1</figcaption></figure>
+<h2>ประมาณการปี 2026 สำหรับรูปแบบรูปภาพและข้อมูลเมตา</h2>
+<section id="i4data" class="estimate"><span class="tag">การประมาณค่า · ไม่ใช่การวัดโดยตรง</span><ul><li>ประมาณการในปี 2026: JPEG ยังคงเป็นคอนเทนเนอร์ที่ใช้บ่อยที่สุดสำหรับเว็บและช็อตที่ถ่ายจากกล้องโดยตรง โดยยังคงเป็นผู้นำในบรรดารูปภาพบนเว็บ</li><li>ประมาณการ ณ ปี 2026: ตั้งแต่ปี 2017 iPhone จะถ่ายภาพในรูปแบบ HEIC ตามค่าเริ่มต้น และรุ่นล่าสุดจะส่งออกข้อมูลเป็น HEIC เป็นหลัก ซึ่งมักต้องมีการแปลงรหัสบน Windows</li><li>ประมาณการในปี 2026: การใช้ WebP และ AVIF ในภาพเว็บเพิ่มขึ้นเรื่อยๆ ในขณะที่กล้องยังไม่ค่อยได้ใช้งาน</li><li>ประมาณการ ณ ปี 2026: ภาพถ่ายในโทรศัพท์ภาพเดียวโดยทั่วไปจะมีขนาด 2–5 MB ที่ 12–50 ล้านพิกเซล; แพลตฟอร์มโซเชียลมักจะบีบอัดการอัปโหลดอีกครั้งและตัด EXIF</li></ul></section>
+<h2>คำถามที่พบบ่อย</h2>
+<details class="faq"><summary>รูปภาพของฉันถูกอัพโหลดไปยังเซิร์ฟเวอร์หรือไม่?</summary><p>ไม่ เครื่องมือนี้ใช้เบราว์เซอร์ FileReader API เพื่ออ่านและแยกวิเคราะห์รูปภาพในเครื่อง รูปภาพจะไม่ออกจากอุปกรณ์ของคุณและไม่ได้อัปโหลดไปยังเซิร์ฟเวอร์ใด ๆ</p></details><details class="faq"><summary>ทำไมรูปภาพของฉันถึงไม่มี EXIF</summary><p>ภาพหน้าจอ รูปภาพที่ดาวน์โหลดและบีบอัดซ้ำจากเว็บ และ PNG ส่วนใหญ่มักจะไม่มี EXIF แพลตฟอร์มโซเชียลยังตัด EXIF ​​ในการอัปโหลดเพื่อปกป้องความเป็นส่วนตัว</p></details><details class="faq"><summary>เหตุใดส่วนขยายจึงแตกต่างจากรูปแบบจริง</summary><p>นามสกุลเป็นเพียงส่วนหนึ่งของชื่อไฟล์และสามารถเปลี่ยนแปลงได้อย่างอิสระ เครื่องมือนี้จะอ่านไบต์ลายเซ็นที่จุดเริ่มต้นของไฟล์ ดังนั้นแม้แต่ .png ที่เปลี่ยนชื่อเป็น .jpg ก็ยังตรวจพบได้อย่างถูกต้อง</p></details><details class="faq"><summary>ฉันขอดูได้ไหมว่าถ่ายรูปที่ไหน?</summary><p>หากภาพถ่ายเก็บข้อมูล GPS ไว้ (โดยทั่วไปสำหรับต้นฉบับของโทรศัพท์ที่ไม่มีการตัดต่อ) เครื่องมือจะแสดงพิกัด รูปภาพส่วนใหญ่ที่บีบอัดโดยแพลตฟอร์มโซเชียลไม่มี GPS อีกต่อไป</p></details><details class="faq"><summary>รองรับ HEIC / RAW หรือไม่</summary><p>เครื่องมือตรวจจับ HEIC/HEIF และรูปแบบที่คล้ายกันด้วยลายเซ็นและแสดงข้อมูลไฟล์ การสนับสนุนเบราว์เซอร์สำหรับการถอดรหัส HEIC นั้นมีจำกัด ดังนั้นภาพขนาดย่ออาจไม่แสดงผล เพื่อการรับชมที่ราบรื่นบน Windows คุณสามารถใช้ 2345 Picture Viewer</p></details><details class="faq"><summary>ข้อมูลถูกต้องหรือไม่?</summary><p>ลายเซ็นรูปแบบ ขนาด และฟิลด์ EXIF ​​ถูกอ่านโดยตรงจากไฟล์และเชื่อถือได้ ส่วนการประมาณการปี 2026 เป็นการประมาณการแนวโน้มและมีป้ายกำกับชัดเจนว่าไม่ใช่การวัดโดยตรง</p></details>
+<div class="related"><h2>ลิงค์ที่เกี่ยวข้อง</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">ดาวน์โหลด 2345 Picture Viewer (บิลด์ Windows อย่างเป็นทางการ)</a></li><li><a href="https://www.cipa.jp/std/std-sec_e.html" rel="nofollow noopener" target="_blank">Exif standard (CIPA DC-008)</a></li><li><a href="https://en.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">Wikipedia: Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">Wikipedia: List of file signatures</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN: FileReader API</a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft: Windows Imaging Component (WIC)</a></li><li><a href="https://support.apple.com/en-us/HT207022" rel="nofollow noopener" target="_blank">Apple: About HEIF/HEVC</a></li></ul></div>
+</main>
+<footer>รวบรวมจากมาตรฐาน Exif (CIPA DC-008) รายการลายเซ็นไฟล์ของ Wikipedia เอกสาร MDN FileReader และหน้าสนับสนุนอย่างเป็นทางการของ Microsoft/Apple ลายเซ็นรูปแบบและฟิลด์ EXIF ​​ถูกอ่านโดยตรงจากไฟล์ หน้านี้เป็นเครื่องมือโอเพ่นซอร์ส สำหรับการอ้างอิงเท่านั้น<br><a href="/about/">ทีมบรรณาธิการ</a> · 開源 / open source · MIT</footer>
+</div>
+<script>window.VL={"basic": "ข้อมูลพื้นฐาน", "exifhead": "ข้อมูลเมตา EXIF", "noexif": "รูปภาพนี้ไม่มีข้อมูลเมตา EXIF ​​(ทั่วไปสำหรับภาพหน้าจอ PNG และรูปภาพที่บีบอัดจากเว็บ)", "filename": "ชื่อไฟล์", "format": "รูปแบบจริง", "ext_mismatch": "(นามสกุลไม่ตรงกับลายเซ็น)", "dimensions": "ขนาด (พิกเซล)", "megapixels": "ล้านพิกเซล", "aspect": "อัตราส่วนภาพ", "filesize": "ขนาดไฟล์", "modified": "แก้ไขครั้งล่าสุด", "colortype": "ประเภทสี", "bitdepth": "ความลึกบิต", "alpha": "มีช่องอัลฟ่า", "make": "ยี่ห้อกล้อง (ยี่ห้อ)", "model": "รุ่นกล้อง (รุ่น)", "datetime": "ถ่ายที่ (DateTimeOriginal)", "exposure": "เวลาเปิดรับแสง (ExposureTime)", "fnumber": "รูรับแสง (FNumber)", "iso": "ความไวแสง (ISO)", "focal": "ทางยาวโฟกัส (FocalLength)", "lens": "เลนส์ (รุ่นเลนส์)", "orientation": "ปฐมนิเทศ", "software": "ซอฟต์แวร์", "gps": "พิกัด GPS", "yes": "ใช่", "no": "ไม่"};</script>
+<script src="/app.js"></script>
+</body></html>
