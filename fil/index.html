@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="fil"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image EXIF &amp; Format Inspector — tingnan ang metadata ng larawan nang lokal</title>
+<meta name="description" content="Libreng online na tool upang suriin ang totoong format ng isang imahe (sa pamamagitan ng file signature), mga sukat, EXIF metadata (camera, exposure, GPS) at kulay — lahat ay lokal na binabasa sa iyong browser, walang na-upload.">
+<link rel="canonical" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Image EXIF & Format Inspector",
+   "url": "https://supermarka.github.io/fil/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "fil",
+   "description": "Libreng online na tool upang suriin ang totoong format ng isang imahe (sa pamamagitan ng file signature), mga sukat, EXIF metadata (camera, exposure, GPS) at kulay — lahat ay lokal na binabasa sa iyong browser, walang na-upload.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fil",
+   "url": "https://supermarka.github.io/fil/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Na-upload ba ang aking mga larawan sa isang server?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hindi. Ginagamit ng tool ang browser na FileReader API upang magbasa at mag-parse ng mga imahe nang lokal; hindi kailanman umaalis ang larawan sa iyong device at hindi ina-upload sa anumang server."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bakit walang EXIF ang aking imahe?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Mga screenshot, mga larawang na-download at muling na-compress mula sa web, at karamihan sa mga PNG ay karaniwang walang EXIF; Tinatanggal din ng mga social platform ang EXIF ​​​​sa pag-upload upang maprotektahan ang privacy."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bakit iba ang extension sa totoong format?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ang isang extension ay bahagi lamang ng pangalan ng file at maaaring malayang palitan. Binabasa ng tool na ito ang mga signature byte sa simula ng file, kaya kahit isang .png na pinalitan ng pangalan sa .jpg ay natukoy nang tama."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Maaari ko bang makita kung saan kinuha ang isang larawan?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kung pinanatili ng larawan ang GPS data nito (karaniwan para sa hindi na-edit na mga orihinal na telepono), ipinapakita ng tool ang mga coordinate. Karamihan sa mga larawang na-compress ng mga social platform ay hindi na nagdadala ng GPS."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Sinusuportahan ba nito ang HEIC / RAW?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nakikita ng tool ang HEIC/HEIF at mga katulad na format sa pamamagitan ng lagda at nagpapakita ng impormasyon ng file; Ang suporta sa browser para sa pag-decode ng HEIC ay limitado, kaya maaaring hindi mag-render ang isang thumbnail. Para sa maayos na pagtingin sa Windows maaari mong gamitin ang 2345 Picture Viewer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Ang data ba ay tumpak?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ang mga format ng lagda, dimensyon at EXIF ​​na field ay direktang binabasa mula sa file at maaasahan; ang seksyon ng mga pagtatantya sa 2026 ay isang pagtatantya ng trend at malinaw na nilagyan ng label bilang hindi unang-kamay na pagsukat."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <strong>Filipino</strong> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Image EXIF &amp; Format Inspector</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_fil.webp"><img src="/img/cover_fil.png" alt="Ilustrasyon ng Image EXIF &amp; Format Inspector na nagpapakita ng metadata ng camera at exposure na nabasa mula sa isang larawan" fetchpriority="high" width="1120" height="640"></picture><figcaption>Fig: Image EXIF &amp; Format Inspector — lokal na basahin ang format, mga sukat at metadata ng camera</figcaption></figure>
+<p>Mag-drop ng larawan o image file sa ibaba para basahin ang totoong format nito (natukoy ng file signature, hindi lang ang extension), pixel dimension, laki ng file, uri ng kulay, at EXIF metadata gaya ng camera at model, exposure, ISO at GPS. Lokal na na-parse ang lahat sa iyong browser gamit ang FileReader API — walang na-upload na larawan.</p>
+<div id="drop" role="button" tabindex="0">Mag-drop ng larawan dito, o i-click upang pumili</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">Privacy: ang mga larawan ay binabasa at na-parse lamang sa loob ng iyong browser at hindi kailanman ina-upload sa anumang server.</p>
+<div id="out"></div>
+<h2>Mga sinusuportahang format at kung paano gumagana ang signature detection</h2>
+<p>Madalas na hinuhulaan ng mga tumitingin ng larawan ang format mula sa extension ng file, ngunit maaaring palitan ng pangalan ang isang extension sa kahit ano. Ang isang mas maaasahang diskarte ay basahin ang unang ilang signature byte (ang magic number). Inililista ng talahanayan sa ibaba ang mga pangunahing format ng imahe na nakikita ng tool na ito at ang kanilang mga lagda:</p>
+<table class="fmt"><tr><th>Format</th><th>Lagda ng file (hex)</th><th>Karaniwang gamit</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>Ang pinaka-unibersal na lossy container para sa web at mga camera</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>Lossless na may transparency; perpekto para sa mga screenshot at icon</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>Mga animation at simpleng graphics; 256-kulay na palette</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>format ng imahe sa web ng Google; parehong lossy at lossless</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>Windows bitmap, karaniwang hindi naka-compress</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>Print at archival; madalas multi-page at mataas na bit depth</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>Default na format ng larawan sa mga Apple device, batay sa HEVC</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>Susunod na henerasyong format ng imahe sa web na may mataas na compression</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>Icon ng Windows, maaaring maglaman ng maraming laki</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>Layered Photoshop source file</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>Fig 1: mula sa pagpili ng isang imahe hanggang sa lokal na pagbabasa ng metadata nito (walang kasangkot na network)</figcaption></figure>
+<h2>Ano ang EXIF metadata at kung paano ito binabasa</h2>
+<p>Ang EXIF (Exchangeable Image File Format) ay isang block ng metadata na isinusulat ng mga camera at telepono sa isang larawan, karaniwang nasa JPEG, TIFF at ilang HEIC file. Karaniwan itong nasa JPEG APP1 segment, na nakaimbak bilang mga direktoryo ng TIFF IFD na may hawak na camera make, model, capture time, exposure, aperture, ISO at focal length — at minsan GPS latitude at longitude. Ang mga screenshot, web-compress na larawan at karamihan sa mga PNG ay karaniwang natanggal ang kanilang EXIF.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_fil.webp"><img src="/img/board_fil.png" alt="Diagram ng istraktura ng JPEG file na may EXIF metadata sa segment ng APP1" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>Fig: ang istraktura ng isang JPEG file — ang EXIF ay nakatira sa direktoryo ng TIFF ng segment ng APP1</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>Fig 2: ang istraktura ng isang JPEG file - ang EXIF ay nakatira sa loob ng direktoryo ng TIFF ng segment ng APP1</figcaption></figure>
+<h2>2026 na pagtatantya para sa mga format ng larawan at metadata</h2>
+<section id="i4data" class="estimate"><span class="tag">pagtatantya · hindi unang-kamay na pagsukat</span><ul><li>Pagtantiya noong 2026: Ang JPEG ay nananatiling pinakakaraniwang lalagyan para sa web at mga straight-out-of-camera na mga kuha, na nangunguna pa rin sa mga larawan sa web.</li><li>Tantyahin noong 2026: mula noong 2017 ang iPhone ay nag-shoot sa HEIC bilang default, at ang mga kamakailang modelo ay naglalabas ng karamihan sa HEIC, na kadalasang nangangailangan ng transcoding sa Windows.</li><li>Pagtantiya noong 2026: Ang paggamit ng WebP at AVIF sa mga larawan sa web ay patuloy na tumataas, habang bihira pa ring gamitin ng mga camera ang mga ito.</li><li>Tantyahin noong 2026: ang isang larawan ng telepono ay karaniwang 2–5 MB sa 12–50 megapixel; ang mga social platform ay karaniwang muling i-compress ang mga pag-upload at hinuhubad ang EXIF.</li></ul></section>
+<h2>Mga madalas itanong</h2>
+<details class="faq"><summary>Na-upload ba ang aking mga larawan sa isang server?</summary><p>Hindi. Ginagamit ng tool ang browser na FileReader API upang magbasa at mag-parse ng mga imahe nang lokal; hindi kailanman umaalis ang larawan sa iyong device at hindi ina-upload sa anumang server.</p></details><details class="faq"><summary>Bakit walang EXIF ang aking imahe?</summary><p>Mga screenshot, mga larawang na-download at muling na-compress mula sa web, at karamihan sa mga PNG ay karaniwang walang EXIF; Tinatanggal din ng mga social platform ang EXIF ​​​​sa pag-upload upang maprotektahan ang privacy.</p></details><details class="faq"><summary>Bakit iba ang extension sa totoong format?</summary><p>Ang isang extension ay bahagi lamang ng pangalan ng file at maaaring malayang palitan. Binabasa ng tool na ito ang mga signature byte sa simula ng file, kaya kahit isang .png na pinalitan ng pangalan sa .jpg ay natukoy nang tama.</p></details><details class="faq"><summary>Maaari ko bang makita kung saan kinuha ang isang larawan?</summary><p>Kung pinanatili ng larawan ang GPS data nito (karaniwan para sa hindi na-edit na mga orihinal na telepono), ipinapakita ng tool ang mga coordinate. Karamihan sa mga larawang na-compress ng mga social platform ay hindi na nagdadala ng GPS.</p></details><details class="faq"><summary>Sinusuportahan ba nito ang HEIC / RAW?</summary><p>Nakikita ng tool ang HEIC/HEIF at mga katulad na format sa pamamagitan ng lagda at nagpapakita ng impormasyon ng file; Ang suporta sa browser para sa pag-decode ng HEIC ay limitado, kaya maaaring hindi mag-render ang isang thumbnail. Para sa maayos na pagtingin sa Windows maaari mong gamitin ang 2345 Picture Viewer.</p></details><details class="faq"><summary>Ang data ba ay tumpak?</summary><p>Ang mga format ng lagda, dimensyon at EXIF ​​na field ay direktang binabasa mula sa file at maaasahan; ang seksyon ng mga pagtatantya sa 2026 ay isang pagtatantya ng trend at malinaw na nilagyan ng label bilang hindi unang-kamay na pagsukat.</p></details>
+<div class="related"><h2>Mga kaugnay na link</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">I-download ang 2345 Picture Viewer (opisyal na Windows build)</a></li><li><a href="https://www.cipa.jp/std/std-sec_e.html" rel="nofollow noopener" target="_blank">Exif standard (CIPA DC-008)</a></li><li><a href="https://en.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">Wikipedia: Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">Wikipedia: List of file signatures</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN: FileReader API</a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft: Windows Imaging Component (WIC)</a></li><li><a href="https://support.apple.com/en-us/HT207022" rel="nofollow noopener" target="_blank">Apple: About HEIF/HEVC</a></li></ul></div>
+</main>
+<footer>Binubuo mula sa Exif standard (CIPA DC-008), listahan ng mga file signature ng Wikipedia, ang MDN FileReader docs at Microsoft/Apple official support page; Ang mga format na lagda at mga patlang ng EXIF ​​ay direktang binabasa mula sa file. Ang pahinang ito ay isang open-source na tool, para sa sanggunian lamang.<br><a href="/about/">Koponan ng editoryal</a> · 開源 / open source · MIT</footer>
+</div>
+<script>window.VL={"basic": "Pangunahing impormasyon", "exifhead": "EXIF metadata", "noexif": "Walang EXIF metadata ang larawang ito (karaniwan para sa mga screenshot, PNG at mga imaheng naka-compress sa web).", "filename": "Pangalan ng file", "format": "Tunay na format", "ext_mismatch": "(hindi tumutugma sa lagda ang extension)", "dimensions": "Mga Dimensyon (px)", "megapixels": "Megapixels", "aspect": "Aspect ratio", "filesize": "Laki ng file", "modified": "Huling binago", "colortype": "Uri ng kulay", "bitdepth": "Bit depth", "alpha": "May alpha channel", "make": "Gumawa ng camera (Gumawa)", "model": "Modelo ng camera (Modelo)", "datetime": "Kinuha sa (DateTimeOriginal)", "exposure": "Oras ng pagkakalantad (ExposureTime)", "fnumber": "Aperture (FNumber)", "iso": "Sensitivity (ISO)", "focal": "Focal length (FocalLength)", "lens": "Lens (LensModel)", "orientation": "Oryentasyon", "software": "Software", "gps": "Mga coordinate ng GPS", "yes": "Oo", "no": "Hindi"};</script>
+<script src="/app.js"></script>
+</body></html>
