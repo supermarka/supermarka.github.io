@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image EXIF ​​&amp; Format Inspector - xem siêu dữ liệu ảnh cục bộ</title>
+<meta name="description" content="Công cụ trực tuyến miễn phí để kiểm tra định dạng thực của hình ảnh (theo chữ ký tệp), kích thước, siêu dữ liệu EXIF ​​(máy ảnh, độ phơi sáng, GPS) và màu sắc - tất cả đều được đọc cục bộ trong trình duyệt của bạn, không có gì được tải lên.">
+<link rel="canonical" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Trình kiểm tra định dạng & EXIF ​​hình ảnh",
+   "url": "https://supermarka.github.io/vi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "vi",
+   "description": "Công cụ trực tuyến miễn phí để kiểm tra định dạng thực của hình ảnh (theo chữ ký tệp), kích thước, siêu dữ liệu EXIF ​​(máy ảnh, độ phơi sáng, GPS) và màu sắc - tất cả đều được đọc cục bộ trong trình duyệt của bạn, không có gì được tải lên.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "vi",
+   "url": "https://supermarka.github.io/vi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Hình ảnh của tôi có được tải lên máy chủ không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Không. Công cụ này sử dụng API FileReader của trình duyệt để đọc và phân tích hình ảnh cục bộ; hình ảnh không bao giờ rời khỏi thiết bị của bạn và không được tải lên bất kỳ máy chủ nào."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tại sao hình ảnh của tôi không có EXIF ​​?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ảnh chụp màn hình, hình ảnh được tải xuống và nén lại từ web và hầu hết các PNG thường không có EXIF; nền tảng xã hội cũng loại bỏ EXIF ​​​​khi tải lên để bảo vệ quyền riêng tư."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tại sao phần mở rộng lại khác với định dạng thực?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Phần mở rộng chỉ là một phần của tên tệp và có thể được thay đổi tùy ý. Công cụ này đọc các byte chữ ký ở đầu tệp, do đó, ngay cả .png được đổi tên thành .jpg cũng được phát hiện chính xác."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tôi có thể xem ảnh được chụp ở đâu không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nếu ảnh vẫn giữ dữ liệu GPS (phổ biến đối với điện thoại gốc chưa chỉnh sửa), công cụ sẽ hiển thị tọa độ. Hầu hết các hình ảnh được nén bởi nền tảng xã hội không còn mang theo GPS nữa."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nó có hỗ trợ HEIC / RAW không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Công cụ phát hiện HEIC/HEIF và các định dạng tương tự bằng chữ ký và hiển thị thông tin tệp; Hỗ trợ trình duyệt để giải mã HEIC bị hạn chế nên hình thu nhỏ có thể không hiển thị. Để xem mượt mà trên Windows bạn có thể sử dụng 2345 Picture Viewer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Dữ liệu có chính xác không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chữ ký định dạng, kích thước và trường EXIF ​​​​được đọc trực tiếp từ tệp và đáng tin cậy; phần ước tính năm 2026 là ước tính xu hướng và được dán nhãn rõ ràng là không phải phép đo trực tiếp."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <strong>Tiếng Việt</strong> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Trình kiểm tra định dạng &amp; EXIF ​​hình ảnh</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_vi.webp"><img src="/img/cover_vi.png" alt="Hình minh họa EXIF ​​và Trình kiểm tra định dạng hình ảnh hiển thị siêu dữ liệu máy ảnh và độ phơi sáng được đọc từ ảnh" fetchpriority="high" width="1120" height="640"></picture><figcaption>Hình: Image EXIF ​​&amp; Format Inspector - đọc định dạng, kích thước và siêu dữ liệu máy ảnh cục bộ</figcaption></figure>
+<p>Thả ảnh hoặc tệp hình ảnh bên dưới để đọc định dạng thực của nó (được phát hiện bằng chữ ký tệp, không chỉ phần mở rộng), kích thước pixel, kích thước tệp, loại màu và siêu dữ liệu EXIF ​​như nhãn hiệu và kiểu máy ảnh, độ phơi sáng, ISO và GPS. Mọi thứ đều được phân tích cú pháp cục bộ trong trình duyệt của bạn bằng API FileReader — không có hình ảnh nào được tải lên.</p>
+<div id="drop" role="button" tabindex="0">Thả hình ảnh vào đây hoặc bấm vào để chọn</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">Quyền riêng tư: hình ảnh chỉ được đọc và phân tích bên trong trình duyệt của bạn và không bao giờ được tải lên bất kỳ máy chủ nào.</p>
+<div id="out"></div>
+<h2>Các định dạng được hỗ trợ và cách phát hiện chữ ký hoạt động</h2>
+<p>Người xem hình ảnh thường đoán định dạng từ phần mở rộng của tệp, nhưng phần mở rộng có thể được đổi tên thành bất cứ thứ gì. Một cách tiếp cận đáng tin cậy hơn là đọc vài byte chữ ký đầu tiên (số ma thuật). Bảng bên dưới liệt kê các định dạng hình ảnh chính mà công cụ này phát hiện và chữ ký của chúng:</p>
+<table class="fmt"><tr><th>định dạng</th><th>Chữ ký tập tin (hex)</th><th>sử dụng điển hình</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>Bộ chứa tổn thất phổ biến nhất dành cho web và máy ảnh</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>Lossless với tính minh bạch; lý tưởng cho ảnh chụp màn hình và biểu tượng</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>Hình ảnh động và đồ họa đơn giản; Bảng màu 256 màu</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>định dạng hình ảnh web của Google; vừa mất mát vừa không mất mát</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>Bitmap Windows, thường không nén</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>In và lưu trữ; thường có nhiều trang và độ sâu bit cao</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>Định dạng ảnh mặc định trên thiết bị Apple, dựa trên HEVC</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>Định dạng hình ảnh web thế hệ tiếp theo với độ nén cao</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>Biểu tượng Windows, có thể chứa nhiều kích cỡ</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>Tệp nguồn Photoshop được xếp lớp</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>Hình 1: từ việc chọn hình ảnh đến đọc siêu dữ liệu cục bộ (không liên quan đến mạng)</figcaption></figure>
+<h2>Siêu dữ liệu EXIF ​​là gì và nó được đọc như thế nào</h2>
+<p>EXIF ​​(Định dạng tệp hình ảnh có thể trao đổi) là một khối siêu dữ liệu mà máy ảnh và điện thoại ghi vào ảnh, thường ở dạng JPEG, TIFF và một số tệp HEIC. Nó thường nằm trong phân đoạn JPEG APP1, được lưu trữ dưới dạng thư mục TIFF IFD chứa thông tin về nhãn hiệu, kiểu máy, thời gian chụp, độ phơi sáng, khẩu độ, ISO và tiêu cự - và đôi khi là vĩ độ và kinh độ GPS. Ảnh chụp màn hình, hình ảnh nén trên web và hầu hết các PNG thường bị loại bỏ EXIF.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_vi.webp"><img src="/img/board_vi.png" alt="Sơ đồ cấu trúc tệp JPEG với siêu dữ liệu EXIF ​​trong phân đoạn APP1" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>Hình: cấu trúc của tệp JPEG - EXIF ​​nằm trong thư mục TIFF của phân đoạn APP1</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>Hình 2: cấu trúc của tệp JPEG - EXIF ​​nằm trong thư mục TIFF của phân đoạn APP1</figcaption></figure>
+<h2>Ước tính năm 2026 cho định dạng hình ảnh và siêu dữ liệu</h2>
+<section id="i4data" class="estimate"><span class="tag">ước tính · không phải đo lường trực tiếp</span><ul><li>Ước tính tính đến năm 2026: JPEG vẫn là vùng chứa phổ biến nhất cho web và ảnh chụp trực tiếp từ máy ảnh, vẫn dẫn đầu trong số các hình ảnh trên web.</li><li>Ước tính đến năm 2026: kể từ năm 2017, iPhone quay ở định dạng HEIC theo mặc định và các mẫu gần đây chủ yếu xuất ra HEIC, thường cần chuyển mã trên Windows.</li><li>Ước tính đến năm 2026: Việc áp dụng WebP và AVIF trong các hình ảnh trên web tiếp tục tăng lên, trong khi máy ảnh vẫn hiếm khi sử dụng chúng.</li><li>Ước tính đến năm 2026: một bức ảnh trên điện thoại thường có dung lượng 2–5 MB ở 12–50 megapixel; nền tảng xã hội thường nén lại các video tải lên và loại bỏ EXIF.</li></ul></section>
+<h2>Câu hỏi thường gặp</h2>
+<details class="faq"><summary>Hình ảnh của tôi có được tải lên máy chủ không?</summary><p>Không. Công cụ này sử dụng API FileReader của trình duyệt để đọc và phân tích hình ảnh cục bộ; hình ảnh không bao giờ rời khỏi thiết bị của bạn và không được tải lên bất kỳ máy chủ nào.</p></details><details class="faq"><summary>Tại sao hình ảnh của tôi không có EXIF ​​?</summary><p>Ảnh chụp màn hình, hình ảnh được tải xuống và nén lại từ web và hầu hết các PNG thường không có EXIF; nền tảng xã hội cũng loại bỏ EXIF ​​​​khi tải lên để bảo vệ quyền riêng tư.</p></details><details class="faq"><summary>Tại sao phần mở rộng lại khác với định dạng thực?</summary><p>Phần mở rộng chỉ là một phần của tên tệp và có thể được thay đổi tùy ý. Công cụ này đọc các byte chữ ký ở đầu tệp, do đó, ngay cả .png được đổi tên thành .jpg cũng được phát hiện chính xác.</p></details><details class="faq"><summary>Tôi có thể xem ảnh được chụp ở đâu không?</summary><p>Nếu ảnh vẫn giữ dữ liệu GPS (phổ biến đối với điện thoại gốc chưa chỉnh sửa), công cụ sẽ hiển thị tọa độ. Hầu hết các hình ảnh được nén bởi nền tảng xã hội không còn mang theo GPS nữa.</p></details><details class="faq"><summary>Nó có hỗ trợ HEIC / RAW không?</summary><p>Công cụ phát hiện HEIC/HEIF và các định dạng tương tự bằng chữ ký và hiển thị thông tin tệp; Hỗ trợ trình duyệt để giải mã HEIC bị hạn chế nên hình thu nhỏ có thể không hiển thị. Để xem mượt mà trên Windows bạn có thể sử dụng 2345 Picture Viewer.</p></details><details class="faq"><summary>Dữ liệu có chính xác không?</summary><p>Chữ ký định dạng, kích thước và trường EXIF ​​​​được đọc trực tiếp từ tệp và đáng tin cậy; phần ước tính năm 2026 là ước tính xu hướng và được dán nhãn rõ ràng là không phải phép đo trực tiếp.</p></details>
+<div class="related"><h2>Liên kết liên quan</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">Tải xuống 2345 Picture Viewer (bản dựng Windows chính thức)</a></li><li><a href="https://www.cipa.jp/std/std-sec_e.html" rel="nofollow noopener" target="_blank">Exif standard (CIPA DC-008)</a></li><li><a href="https://en.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">Wikipedia: Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">Wikipedia: List of file signatures</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN: FileReader API</a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft: Windows Imaging Component (WIC)</a></li><li><a href="https://support.apple.com/en-us/HT207022" rel="nofollow noopener" target="_blank">Apple: About HEIF/HEVC</a></li></ul></div>
+</main>
+<footer>Được biên soạn từ tiêu chuẩn Exif (CIPA DC-008), danh sách chữ ký tệp của Wikipedia, tài liệu MDN FileReader và các trang hỗ trợ chính thức của Microsoft/Apple; chữ ký định dạng và trường EXIF ​​​​được đọc trực tiếp từ tệp. Trang này là một công cụ nguồn mở, chỉ mang tính chất tham khảo.<br><a href="/about/">Nhóm biên tập</a> · 開源 / open source · MIT</footer>
+</div>
+<script>window.VL={"basic": "Thông tin cơ bản", "exifhead": "Siêu dữ liệu EXIF", "noexif": "Hình ảnh này không chứa siêu dữ liệu EXIF ​​(phổ biến cho ảnh chụp màn hình, PNG và hình ảnh nén trên web).", "filename": "Tên tập tin", "format": "định dạng thực", "ext_mismatch": "(phần mở rộng không khớp với chữ ký)", "dimensions": "Kích thước (px)", "megapixels": "Megapixel", "aspect": "tỷ lệ khung hình", "filesize": "Kích thước tệp", "modified": "Sửa đổi lần cuối", "colortype": "Loại màu", "bitdepth": "Độ sâu bit", "alpha": "Có kênh alpha", "make": "Chế tạo máy ảnh (Make)", "model": "Mẫu máy ảnh (Model)", "datetime": "Chụp vào lúc (DateTimeOriginal)", "exposure": "Thời gian phơi sáng (ExposureTime)", "fnumber": "Khẩu độ (Số FN)", "iso": "Độ nhạy (ISO)", "focal": "Độ dài tiêu cự (Tiêu cự)", "lens": "Ống kính (LensModel)", "orientation": "định hướng", "software": "Phần mềm", "gps": "tọa độ GPS", "yes": "Có", "no": "Không"};</script>
+<script src="/app.js"></script>
+</body></html>
