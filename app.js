@@ -59,11 +59,11 @@ function parseTiff(dv,base){
             0x9003:"datetime",0x9004:"datetimedigitized",0x829A:"exposure",0x829D:"fnumber",
             0x8827:"iso",0x8833:"iso",0x920A:"focal",0xA434:"lens",0xA432:"lens"};
   function val(eo){
-    var type=u16(eo+2),cnt=u32(eo+4);
+    var tag=u16(eo),type=u16(eo+2),cnt=u32(eo+4);
     var bs={1:1,2:1,3:2,4:4,5:8,7:1,9:4,10:8}[type]||1;
     var total=bs*cnt, po=(total<=4)?(eo+8):u32(eo+8);
     if(type==2){var s="";for(var i=0;i<cnt&&base+po+i<dv.byteLength;i++){var c=dv.getUint8(base+po+i);if(c==0)break;s+=String.fromCharCode(c);}return s.trim();}
-    if(type==3)return u16(po);
+    if(type==3){if(cnt==2&&(tag==0x829A||tag==0x829D||tag==0x920A)){var a=u16(po),b=u16(po+2);return b?a/b:a;}return u16(po);}
     if(type==4)return u32(po);
     if(type==5){var n=u32(po),d=u32(po+4);return d?n/d:0;}
     if(type==10){var n2=dv.getInt32(base+po,le),d2=dv.getInt32(base+po+4,le);return d2?n2/d2:0;}
