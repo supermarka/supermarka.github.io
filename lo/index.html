@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="lo"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ຮູບພາບ EXIF &amp; Format Inspector — ເບິ່ງ metadata ຮູບພາບຢູ່ໃນທ້ອງຖິ່ນ</title>
+<meta name="description" content="ເຄື່ອງ​ມື​ອອນ​ໄລ​ນ​໌​ຟຣີ​ເພື່ອ​ກວດ​ກາ​ຮູບ​ແບບ​ທີ່​ແທ້​ຈິງ​ຂອງ​ຮູບ​ພາບ (ໂດຍ​ລາຍ​ເຊັນ​ໄຟລ​໌​)​, ຂະ​ຫນາດ​, metadata EXIF (ກ້ອງ​ຖ່າຍ​ຮູບ​, GPS​) ແລະ​ສີ — ທັງ​ຫມົດ​ອ່ານ​ໃນ​ຕົວ​ທ່ອງ​ເວັບ​ຂອງ​ທ່ານ​, ບໍ່​ມີ​ຫຍັງ​ອັບ​ໂຫຼດ​.">
+<link rel="canonical" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "ຮູບພາບ EXIF & Format Inspector",
+   "url": "https://supermarka.github.io/lo/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "lo",
+   "description": "ເຄື່ອງ​ມື​ອອນ​ໄລ​ນ​໌​ຟຣີ​ເພື່ອ​ກວດ​ກາ​ຮູບ​ແບບ​ທີ່​ແທ້​ຈິງ​ຂອງ​ຮູບ​ພາບ (ໂດຍ​ລາຍ​ເຊັນ​ໄຟລ​໌​)​, ຂະ​ຫນາດ​, metadata EXIF (ກ້ອງ​ຖ່າຍ​ຮູບ​, GPS​) ແລະ​ສີ — ທັງ​ຫມົດ​ອ່ານ​ໃນ​ຕົວ​ທ່ອງ​ເວັບ​ຂອງ​ທ່ານ​, ບໍ່​ມີ​ຫຍັງ​ອັບ​ໂຫຼດ​.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "lo",
+   "url": "https://supermarka.github.io/lo/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ຮູບພາບຂອງຂ້ອຍຖືກອັບໂຫລດໃສ່ເຄື່ອງແມ່ຂ່າຍບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ບໍ່. ເຄື່ອງມືດັ່ງກ່າວໃຊ້ Browser FileReader API ເພື່ອອ່ານ ແລະວິເຄາະຮູບພາບຢູ່ໃນທ້ອງຖິ່ນ; ຮູບພາບບໍ່ເຄີຍອອກຈາກອຸປະກອນຂອງທ່ານແລະບໍ່ໄດ້ຖືກອັບໂຫລດໄປຍັງເຄື່ອງແມ່ຂ່າຍໃດໆ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ເປັນຫຍັງຮູບຂອງຂ້ອຍຈຶ່ງບໍ່ມີ EXIF?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ພາບໜ້າຈໍ, ຮູບພາບທີ່ດາວໂຫຼດ ແລະຖືກບີບອັດຄືນໃໝ່ຈາກເວັບ, ແລະ PNG ສ່ວນໃຫຍ່ມັກຈະບໍ່ມີ EXIF; ເວທີສັງຄົມຍັງລອກເອົາ EXIF ​​ຢູ່ເທິງການອັບໂຫລດເພື່ອປົກປ້ອງຄວາມເປັນສ່ວນຕົວ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ເປັນຫຍັງການຂະຫຍາຍແຕກຕ່າງຈາກຮູບແບບທີ່ແທ້ຈິງ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ສ່ວນຂະຫຍາຍເປັນພຽງສ່ວນໜຶ່ງຂອງຊື່ໄຟລ໌ ແລະສາມາດປ່ຽນແປງໄດ້ຢ່າງເສລີ. ເຄື່ອງ​ມື​ນີ້​ອ່ານ​ລາຍ​ເຊັນ​ໄບ​ຕ໌​ໃນ​ຕອນ​ຕົ້ນ​ຂອງ​ໄຟລ​໌​, ສະ​ນັ້ນ​ເຖິງ​ແມ່ນ​ວ່າ .png ປ່ຽນ​ຊື່​ເປັນ .jpg ແມ່ນ​ຖືກ​ກວດ​ພົບ​ຢ່າງ​ຖືກ​ຕ້ອງ​."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ຂ້ອຍສາມາດເຫັນບ່ອນໃດຖ່າຍຮູບໄດ້ບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ຖ້າຮູບພາບເກັບຮັກສາຂໍ້ມູນ GPS ຂອງມັນ (ທົ່ວໄປສໍາລັບຕົ້ນສະບັບໂທລະສັບທີ່ບໍ່ໄດ້ຮັບການແກ້ໄຂ), ເຄື່ອງມືຈະສະແດງຈຸດປະສານງານ. ຮູບພາບສ່ວນໃຫຍ່ທີ່ຖືກບີບອັດໂດຍເວທີສັງຄົມບໍ່ມີ GPS ອີກຕໍ່ໄປ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ມັນສະຫນັບສະຫນູນ HEIC / RAW ບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ເຄື່ອງມືກວດຫາ HEIC/HEIF ແລະຮູບແບບທີ່ຄ້າຍຄືກັນໂດຍລາຍເຊັນ ແລະສະແດງຂໍ້ມູນໄຟລ໌; ການສະຫນັບສະຫນູນຂອງຕົວທ່ອງເວັບສໍາລັບການຖອດລະຫັດ HEIC ແມ່ນຈໍາກັດ, ດັ່ງນັ້ນຮູບຫຍໍ້ອາດຈະບໍ່ສະແດງ. ສໍາລັບການເບິ່ງລຽບໃນ Windows ທ່ານສາມາດນໍາໃຊ້ 2345 Picture Viewer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ຂໍ້ມູນຖືກຕ້ອງບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ຮູບແບບລາຍເຊັນ, ຂະຫນາດແລະຊ່ອງຂໍ້ມູນ EXIF ​​ແມ່ນອ່ານໂດຍກົງຈາກໄຟລ໌ແລະມີຄວາມຫນ້າເຊື່ອຖື; ພາກສ່ວນການຄາດຄະເນປີ 2026 ແມ່ນການຄາດຄະເນແນວໂນ້ມ ແລະຖືກໝາຍຢ່າງຈະແຈ້ງວ່າບໍ່ແມ່ນການວັດແທກດ້ວຍມືທຳອິດ."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <strong>ພາສາລາວ</strong> · <a href="/my/">မြန်မာ</a></nav>
+<h1>ຮູບພາບ EXIF &amp; Format Inspector</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_lo.webp"><img src="/img/cover_lo.png" alt="ຮູບປະກອບຂອງຮູບພາບ EXIF &amp; Format Inspector ສະແດງກ້ອງຖ່າຍຮູບ ແລະເມຕາເດຕາຂອງ exposure ອ່ານຈາກຮູບ" fetchpriority="high" width="1120" height="640"></picture><figcaption>Fig: ຮູບພາບ EXIF &amp; Format Inspector — ອ່ານຮູບແບບ, ຂະໜາດ ແລະ metadata ກ້ອງຖ່າຍຮູບຢູ່ໃນທ້ອງຖິ່ນ</figcaption></figure>
+<p>ວາງຮູບ ຫຼື ໄຟລ໌ຮູບພາບລົງລຸ່ມນີ້ເພື່ອອ່ານຮູບແບບທີ່ແທ້ຈິງຂອງມັນ (ກວດພົບໂດຍລາຍເຊັນຂອງໄຟລ໌, ບໍ່ພຽງແຕ່ສ່ວນຂະຫຍາຍ), ຂະໜາດຂອງ pixels, ຂະໜາດໄຟລ໌, ປະເພດສີ, ແລະ EXIF metadata ເຊັ່ນ: ການສ້າງກ້ອງຖ່າຍຮູບ ແລະແບບຈໍາລອງ, ຄ່າແສງ, ISO ແລະ GPS. ທຸກສິ່ງທຸກຢ່າງຖືກວິເຄາະຢູ່ໃນທ້ອງຖິ່ນໃນຕົວທ່ອງເວັບຂອງທ່ານດ້ວຍ FileReader API — ບໍ່ມີຮູບພາບໃດຖືກອັບໂຫຼດ.</p>
+<div id="drop" role="button" tabindex="0">ວາງຮູບໃສ່ບ່ອນນີ້, ຫຼືຄລິກເພື່ອເລືອກ</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">ຄວາມ​ເປັນ​ສ່ວນ​ຕົວ​: ຮູບ​ພາບ​ແມ່ນ​ໄດ້​ອ່ານ​ແລະ​ແຍກ​ພຽງ​ແຕ່​ຢູ່​ໃນ​ຕົວ​ທ່ອງ​ເວັບ​ຂອງ​ທ່ານ​ແລະ​ບໍ່​ໄດ້​ຖືກ​ອັບ​ໂຫລດ​ໄປ​ຫາ​ເຄື່ອງ​ແມ່​ຂ່າຍ​ໃດ​ຫນຶ່ງ​.</p>
+<div id="out"></div>
+<h2>ຮູບແບບທີ່ຮອງຮັບ ແລະວິທີການກວດສອບລາຍເຊັນເຮັດວຽກ</h2>
+<p>ຜູ້ຊົມຮູບພາບມັກຈະເດົາຮູບແບບຈາກນາມສະກຸນໄຟລ໌, ແຕ່ສ່ວນຂະຫຍາຍສາມາດປ່ຽນຊື່ເປັນອັນໃດກໍໄດ້. ວິທີການທີ່ເຊື່ອຖືໄດ້ຫຼາຍແມ່ນການອ່ານ bytes ລາຍເຊັນທໍາອິດ (ຕົວເລກ magic). ຕາຕະລາງຂ້າງລຸ່ມນີ້ສະແດງຮູບແບບຮູບພາບຕົ້ນຕໍທີ່ເຄື່ອງມືນີ້ກວດພົບແລະລາຍເຊັນຂອງພວກມັນ:</p>
+<table class="fmt"><tr><th>ຮູບແບບ</th><th>ລາຍເຊັນໄຟລ໌ (hex)</th><th>ການນໍາໃຊ້ປົກກະຕິ</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>ຕູ້ຄອນເທນເນີ lossy ທົ່ວໄປທີ່ສຸດສໍາລັບເວັບໄຊຕ໌ແລະກ້ອງຖ່າຍຮູບ</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>Lossless ກັບຄວາມໂປ່ງໃສ; ເໝາະສຳລັບພາບໜ້າຈໍ ແລະໄອຄອນ</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>ພາບເຄື່ອນໄຫວແລະຮູບພາບງ່າຍດາຍ; 256 ສີ palette</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>ຮູບແບບຮູບພາບເວັບໄຊຕ໌ຂອງ Google; ທັງສູນເສຍແລະສູນເສຍ</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>Windows bitmap, ປົກກະຕິແລ້ວບໍ່ມີການບີບອັດ</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>ພິມ ແລະ ຮວບຮວມ; ມັກຈະມີຫຼາຍໜ້າ ແລະຄວາມເລິກບິດສູງ</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>ຮູບແບບຮູບພາບເລີ່ມຕົ້ນໃນອຸປະກອນ Apple, ອີງຕາມ HEVC</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>ຮູບແບບຮູບພາບເວັບລຸ້ນຕໍ່ໄປທີ່ມີການບີບອັດສູງ</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>ໄອຄອນ Windows, ອາດມີຫຼາຍຂະໜາດ</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>ໄຟລ໌ແຫຼ່ງ Photoshop ຊັ້ນ</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>Fig 1: ຈາກ​ການ​ເລືອກ​ຮູບ​ພາບ​ເພື່ອ​ອ່ານ metadata ຂອງ​ຕົນ​ໃນ​ທ້ອງ​ຖິ່ນ (ບໍ່​ມີ​ເຄືອ​ຂ່າຍ​ທີ່​ກ່ຽວ​ຂ້ອງ​)</figcaption></figure>
+<h2>metadata EXIF ແມ່ນຫຍັງແລະວິທີທີ່ມັນຖືກອ່ານ</h2>
+<p>EXIF (ຮູບ​ແບບ​ໄຟລ​໌​ທີ່​ສາ​ມາດ​ແລກ​ປ່ຽນ​ໄດ້​) ເປັນ​ຕັນ​ຂອງ metadata ທີ່​ກ້ອງ​ຖ່າຍ​ຮູບ​ແລະ​ໂທລະ​ສັບ​ຂຽນ​ເຂົ້າ​ໄປ​ໃນ​ຮູບ​ພາບ​, ໂດຍ​ທົ່ວ​ໄປ​ໃນ JPEG​, TIFF ແລະ​ບາງ​ໄຟລ​໌ HEIC​. ປົກກະຕິແລ້ວມັນນັ່ງຢູ່ໃນສ່ວນ JPEG APP1, ເກັບໄວ້ເປັນໄດເລກະທໍລີ TIFF IFD ທີ່ຖືກ້ອງຖ່າຍຮູບສ້າງ, ຕົວແບບ, ເວລາຈັບພາບ, ແສງ, ຮູຮັບແສງ, ISO ແລະຄວາມຍາວໂຟກັສ - ແລະບາງຄັ້ງ GPS latitude ແລະ longitude. ພາບໜ້າຈໍ, ຮູບພາບທີ່ບີບອັດຈາກເວັບ ແລະ PNGs ສ່ວນໃຫຍ່ມັກຈະມີການຖອດ EXIF ​​ຂອງມັນອອກ.</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_lo.webp"><img src="/img/board_lo.png" alt="ແຜນວາດຂອງໂຄງສ້າງໄຟລ໌ JPEG ທີ່ມີ metadata EXIF ຢູ່ໃນພາກສ່ວນ APP1" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>Fig: ໂຄງສ້າງຂອງໄຟລ໌ JPEG — EXIF ອາໄສຢູ່ໃນ TIFF directory ຂອງ APP1 segment</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>ຮູບທີ 2: ໂຄງສ້າງຂອງໄຟລ໌ JPEG — EXIF ອາໄສຢູ່ໃນໄດເລກະທໍລີ TIFF ຂອງພາກສ່ວນ APP1</figcaption></figure>
+<h2>2026 ການຄາດຄະເນສໍາລັບຮູບແບບຮູບພາບແລະ metadata</h2>
+<section id="i4data" class="estimate"><span class="tag">ການຄາດຄະເນ · ບໍ່ແມ່ນການວັດແທກດ້ວຍມືທຳອິດ</span><ul><li>ການຄາດຄະເນໃນປີ 2026: JPEG ຍັງຄົງເປັນພາຊະນະທີ່ພົບເລື້ອຍທີ່ສຸດສຳລັບເວັບ ແລະ ການຖ່າຍຮູບອອກຈາກກ້ອງແບບກົງໆ, ຍັງນຳໜ້າໃນບັນດາຮູບພາບເວັບ.</li><li>ຄາດຄະເນໃນປີ 2026: ຕັ້ງແຕ່ປີ 2017 ເປັນຕົ້ນມາ iPhone ຍິງໃນ HEIC ໂດຍຄ່າເລີ່ມຕົ້ນ, ແລະ ຮຸ່ນຫຼ້າສຸດອອກ HEIC ສ່ວນໃຫຍ່, ເຊິ່ງມັກຈະຕ້ອງການການປ່ຽນລະຫັດໃນ Windows.</li><li>ການຄາດຄະເນໃນປີ 2026: ການຮັບຮອງເອົາ WebP ແລະ AVIF ໃນບັນດາຮູບພາບເວັບເພີ່ມຂຶ້ນຢ່າງຕໍ່ເນື່ອງ, ໃນຂະນະທີ່ກ້ອງຖ່າຍຮູບຍັງບໍ່ຄ່ອຍໃຊ້ມັນ.</li><li>ຄາດຄະເນໃນປີ 2026: ຮູບພາບໂທລະສັບໜ່ວຍດຽວແມ່ນໂດຍທົ່ວໄປແລ້ວ 2–5 MB ທີ່ 12–50 ລ້ານພິກເຊລ; ແພລະຕະຟອມສັງຄົມປົກກະຕິແລ້ວບີບອັດການອັບໂຫລດຄືນໃຫມ່ແລະລອກເອົາ EXIF.</li></ul></section>
+<h2>ຄຳຖາມທີ່ມັກຖາມເລື້ອຍໆ</h2>
+<details class="faq"><summary>ຮູບພາບຂອງຂ້ອຍຖືກອັບໂຫລດໃສ່ເຄື່ອງແມ່ຂ່າຍບໍ?</summary><p>ບໍ່. ເຄື່ອງມືດັ່ງກ່າວໃຊ້ Browser FileReader API ເພື່ອອ່ານ ແລະວິເຄາະຮູບພາບຢູ່ໃນທ້ອງຖິ່ນ; ຮູບພາບບໍ່ເຄີຍອອກຈາກອຸປະກອນຂອງທ່ານແລະບໍ່ໄດ້ຖືກອັບໂຫລດໄປຍັງເຄື່ອງແມ່ຂ່າຍໃດໆ.</p></details><details class="faq"><summary>ເປັນຫຍັງຮູບຂອງຂ້ອຍຈຶ່ງບໍ່ມີ EXIF?</summary><p>ພາບໜ້າຈໍ, ຮູບພາບທີ່ດາວໂຫຼດ ແລະຖືກບີບອັດຄືນໃໝ່ຈາກເວັບ, ແລະ PNG ສ່ວນໃຫຍ່ມັກຈະບໍ່ມີ EXIF; ເວທີສັງຄົມຍັງລອກເອົາ EXIF ​​ຢູ່ເທິງການອັບໂຫລດເພື່ອປົກປ້ອງຄວາມເປັນສ່ວນຕົວ.</p></details><details class="faq"><summary>ເປັນຫຍັງການຂະຫຍາຍແຕກຕ່າງຈາກຮູບແບບທີ່ແທ້ຈິງ?</summary><p>ສ່ວນຂະຫຍາຍເປັນພຽງສ່ວນໜຶ່ງຂອງຊື່ໄຟລ໌ ແລະສາມາດປ່ຽນແປງໄດ້ຢ່າງເສລີ. ເຄື່ອງ​ມື​ນີ້​ອ່ານ​ລາຍ​ເຊັນ​ໄບ​ຕ໌​ໃນ​ຕອນ​ຕົ້ນ​ຂອງ​ໄຟລ​໌​, ສະ​ນັ້ນ​ເຖິງ​ແມ່ນ​ວ່າ .png ປ່ຽນ​ຊື່​ເປັນ .jpg ແມ່ນ​ຖືກ​ກວດ​ພົບ​ຢ່າງ​ຖືກ​ຕ້ອງ​.</p></details><details class="faq"><summary>ຂ້ອຍສາມາດເຫັນບ່ອນໃດຖ່າຍຮູບໄດ້ບໍ?</summary><p>ຖ້າຮູບພາບເກັບຮັກສາຂໍ້ມູນ GPS ຂອງມັນ (ທົ່ວໄປສໍາລັບຕົ້ນສະບັບໂທລະສັບທີ່ບໍ່ໄດ້ຮັບການແກ້ໄຂ), ເຄື່ອງມືຈະສະແດງຈຸດປະສານງານ. ຮູບພາບສ່ວນໃຫຍ່ທີ່ຖືກບີບອັດໂດຍເວທີສັງຄົມບໍ່ມີ GPS ອີກຕໍ່ໄປ.</p></details><details class="faq"><summary>ມັນສະຫນັບສະຫນູນ HEIC / RAW ບໍ?</summary><p>ເຄື່ອງມືກວດຫາ HEIC/HEIF ແລະຮູບແບບທີ່ຄ້າຍຄືກັນໂດຍລາຍເຊັນ ແລະສະແດງຂໍ້ມູນໄຟລ໌; ການສະຫນັບສະຫນູນຂອງຕົວທ່ອງເວັບສໍາລັບການຖອດລະຫັດ HEIC ແມ່ນຈໍາກັດ, ດັ່ງນັ້ນຮູບຫຍໍ້ອາດຈະບໍ່ສະແດງ. ສໍາລັບການເບິ່ງລຽບໃນ Windows ທ່ານສາມາດນໍາໃຊ້ 2345 Picture Viewer.</p></details><details class="faq"><summary>ຂໍ້ມູນຖືກຕ້ອງບໍ?</summary><p>ຮູບແບບລາຍເຊັນ, ຂະຫນາດແລະຊ່ອງຂໍ້ມູນ EXIF ​​ແມ່ນອ່ານໂດຍກົງຈາກໄຟລ໌ແລະມີຄວາມຫນ້າເຊື່ອຖື; ພາກສ່ວນການຄາດຄະເນປີ 2026 ແມ່ນການຄາດຄະເນແນວໂນ້ມ ແລະຖືກໝາຍຢ່າງຈະແຈ້ງວ່າບໍ່ແມ່ນການວັດແທກດ້ວຍມືທຳອິດ.</p></details>
+<div class="related"><h2>ການເຊື່ອມຕໍ່ທີ່ກ່ຽວຂ້ອງ</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">ດາວໂຫລດ 2345 Picture Viewer (ສ້າງ Windows ຢ່າງເປັນທາງການ)</a></li><li><a href="https://www.cipa.jp/std/std-sec_e.html" rel="nofollow noopener" target="_blank">Exif standard (CIPA DC-008)</a></li><li><a href="https://en.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">Wikipedia: Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">Wikipedia: List of file signatures</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN: FileReader API</a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft: Windows Imaging Component (WIC)</a></li><li><a href="https://support.apple.com/en-us/HT207022" rel="nofollow noopener" target="_blank">Apple: About HEIF/HEVC</a></li></ul></div>
+</main>
+<footer>ລວບລວມຈາກມາດຕະຖານ Exif (CIPA DC-008), ລາຍຊື່ໄຟລ໌ລາຍເຊັນຂອງ Wikipedia, ເອກະສານ MDN FileReader ແລະໜ້າຊ່ວຍເຫຼືອຢ່າງເປັນທາງການຂອງ Microsoft/Apple; ລາຍເຊັນຮູບແບບ ແລະຊ່ອງຂໍ້ມູນ EXIF ​​ແມ່ນອ່ານໂດຍກົງຈາກໄຟລ໌. ຫນ້ານີ້ແມ່ນເຄື່ອງມືແຫຼ່ງເປີດ, ສໍາລັບການອ້າງອີງເທົ່ານັ້ນ.<br><a href="/about/">ທີມງານບັນນາທິການ</a> · 開源 / open source · MIT</footer>
+</div>
+<script>window.VL={"basic": "ຂໍ້ມູນພື້ນຖານ", "exifhead": "EXIF metadata", "noexif": "ຮູບພາບນີ້ບໍ່ມີເມຕາເດຕາ EXIF (ທົ່ວໄປສໍາລັບພາບຫນ້າຈໍ, PNGs ແລະຮູບພາບທີ່ຖືກບີບອັດຈາກເວັບ).", "filename": "ຊື່ໄຟລ໌", "format": "ຮູບແບບທີ່ແທ້ຈິງ", "ext_mismatch": "(ສ່ວນຂະຫຍາຍບໍ່ກົງກັບລາຍເຊັນ)", "dimensions": "ຂະໜາດ (px)", "megapixels": "ລ້ານພິກເຊລ", "aspect": "ອັດຕາສ່ວນ", "filesize": "ຂະໜາດໄຟລ໌", "modified": "ດັດແກ້ຫຼ້າສຸດ", "colortype": "ປະເພດສີ", "bitdepth": "ຄວາມເລິກບິດ", "alpha": "ມີຊ່ອງ alpha", "make": "ກ້ອງຖ່າຍຮູບເຮັດ (ເຮັດ)", "model": "ຕົວແບບກ້ອງຖ່າຍຮູບ (Model)", "datetime": "ຖ່າຍເມື່ອ (DateTimeOriginal)", "exposure": "ເວລາຮັບແສງ (ExposureTime)", "fnumber": "ຮູຮັບແສງ (FNumber)", "iso": "ຄວາມອ່ອນໄຫວ (ISO)", "focal": "ຄວາມຍາວໂຟກັສ (FocalLength)", "lens": "ເລນ (LensModel)", "orientation": "ປະຖົມນິເທດ", "software": "ຊອບແວ", "gps": "ພິກັດ GPS", "yes": "ແມ່ນແລ້ວ", "no": "ບໍ່"};</script>
+<script src="/app.js"></script>
+</body></html>
