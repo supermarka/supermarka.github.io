@@ -1,3 +1,5 @@
-# 2345看图王
+# supermarka.github.io
 
-官网: https://viewer2345.com/
+Image EXIF & Format Inspector — a free, client-side tool to read an image's format (by signature), dimensions, EXIF metadata and color locally in the browser (nothing uploaded). 12 languages. Online: https://supermarka.github.io/
+
+MIT License.
