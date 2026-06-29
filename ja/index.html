@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>画像EXIF・フォーマット検査ツール — 写真のメタ情報をローカルで確認</title>
+<meta name="description" content="画像の実フォーマット(ファイル署名で判定)、サイズ、EXIF メタ情報(カメラ・露出・GPS)、色をブラウザ内だけで読み取る無料ツール。サーバーへのアップロードは一切なし。">
+<link rel="canonical" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://supermarka.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://supermarka.github.io/zh-tw/">
+<link rel="alternate" hreflang="en" href="https://supermarka.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://supermarka.github.io/ja/">
+<link rel="alternate" hreflang="id" href="https://supermarka.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://supermarka.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://supermarka.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://supermarka.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://supermarka.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://supermarka.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://supermarka.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://supermarka.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://supermarka.github.io/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "画像EXIF・フォーマット検査ツール",
+   "url": "https://supermarka.github.io/ja/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "browserRequirements": "Requires JavaScript",
+   "inLanguage": "ja",
+   "description": "画像の実フォーマット(ファイル署名で判定)、サイズ、EXIF メタ情報(カメラ・露出・GPS)、色をブラウザ内だけで読み取る無料ツール。サーバーへのアップロードは一切なし。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ja",
+   "url": "https://supermarka.github.io/ja/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "画像はサーバーにアップロードされますか?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "いいえ。ブラウザの FileReader API でローカルに読み取り・解析するため、画像は端末から出ず、どのサーバーにもアップロードされません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "なぜ私の画像に EXIF がないのですか?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "スクリーンショット、Web からダウンロードして再圧縮された画像、多くの PNG には通常 EXIF がありません。SNS もアップロード時にプライバシー保護のため EXIF を削除します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "拡張子と「実フォーマット」が違うのはなぜ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "拡張子はファイル名の一部にすぎず、自由に変えられます。本ツールはファイル先頭の署名バイトを読むため、.png を .jpg に変えても正しく判定します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "撮影場所は分かりますか?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "写真が GPS 情報を保持していれば(スマホの未編集オリジナルに多い)、座標を表示します。SNS で圧縮された画像はたいてい GPS がありません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "HEIC / RAW に対応していますか?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "署名で HEIC/HEIF などを判定しファイル情報を表示します。ブラウザの HEIC デコード対応は限定的で、サムネイルは表示されないことがあります。Windows で快適に見るには 2345看图王 が使えます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "データは正確ですか?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "フォーマット署名・サイズ・EXIF 項目はファイルから直接読むため信頼できます。「2026 推計」の節は傾向推計で、一次実測ではないと明記しています。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/en/">English</a> · <strong>日本語</strong> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>画像EXIF・フォーマット検査ツール</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ja.webp"><img src="/img/cover_ja.png" alt="画像EXIF・フォーマット検査ツールの図。写真から読み取ったカメラと露出のメタ情報を表示" fetchpriority="high" width="1120" height="640"></picture><figcaption>図:画像EXIF・フォーマット検査ツール — フォーマット・サイズ・カメラ情報をローカルで読み取り</figcaption></figure>
+<p>写真や画像ファイルを下にドロップすると、実フォーマット(拡張子ではなくファイル署名で判定)、ピクセルサイズ、ファイルサイズ、色の種類、さらにカメラのメーカー・機種、露出、ISO、GPS などの EXIF メタ情報を読み取れます。すべてブラウザの FileReader API でローカル解析し、画像をアップロードすることはありません。</p>
+<div id="drop" role="button" tabindex="0">画像をここにドロップ、またはクリックして選択</div>
+<input id="file" type="file" accept="image/*">
+<p class="privacy">プライバシー:画像はブラウザ内だけで読み取り・解析され、どのサーバーにもアップロードされません。</p>
+<div id="out"></div>
+<h2>対応フォーマットと「署名による判定」の仕組み</h2>
+<p>ビューアは拡張子からフォーマットを推測しがちですが、拡張子は自由に変更できます。より確実なのは、ファイル先頭の数バイトの署名(マジックナンバー)を読むことです。本ツールが判定する主な画像フォーマットと署名は次のとおりです:</p>
+<table class="fmt"><tr><th>フォーマット</th><th>ファイル署名(16進)</th><th>主な用途</th></tr><tr><td>JPEG</td><td class="sig">FF D8 FF</td><td>Web とカメラ出力で最も汎用的な非可逆フォーマット</td></tr><tr><td>PNG</td><td class="sig">89 50 4E 47 0D 0A 1A 0A</td><td>可逆・透過対応。スクリーンショットやアイコン向き</td></tr><tr><td>GIF</td><td class="sig">47 49 46 38 (GIF8)</td><td>アニメーションや簡単な図。256 色パレット</td></tr><tr><td>WebP</td><td class="sig">52 49 46 46 .. .. .. .. 57 45 42 50 (RIFF WEBP)</td><td>Google の Web 画像フォーマット。非可逆・可逆の両対応</td></tr><tr><td>BMP</td><td class="sig">42 4D (BM)</td><td>Windows ビットマップ。通常は無圧縮</td></tr><tr><td>TIFF</td><td class="sig">49 49 2A 00 / 4D 4D 00 2A (II / MM)</td><td>印刷・保存向け。多ページや高ビット深度が多い</td></tr><tr><td>HEIC</td><td class="sig">.. ftypheic / ftypheix / ftypmif1</td><td>Apple 機器の既定の写真フォーマット。HEVC ベース</td></tr><tr><td>AVIF</td><td class="sig">.. ftypavif</td><td>高圧縮の次世代 Web 画像フォーマット</td></tr><tr><td>ICO</td><td class="sig">00 00 01 00</td><td>Windows アイコン。複数サイズを含むことがある</td></tr><tr><td>PSD</td><td class="sig">38 42 50 53 (8BPS)</td><td>Photoshop のレイヤー付き元ファイル</td></tr></table>
+<figure class="svgfig"><svg viewBox="0 0 1100 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Local image inspection flow"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0084ff"/></marker></defs><rect x="2" y="2" width="1096" height="146" rx="14" fill="#f6faff" stroke="#d6e6fb"/><g><rect x="24" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="36" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">1. Choose image</text><text x="36" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">drag & drop / pick</text></g><g><rect x="242" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="254" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">2. FileReader</text><text x="254" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">ArrayBuffer (local)</text></g><g><rect x="460" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="472" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">3. Signature</text><text x="472" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">magic bytes -> format</text></g><g><rect x="678" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="690" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">4. Decode</text><text x="690" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">size / EXIF / color</text></g><g><rect x="896" y="40" width="170" height="64" rx="10" fill="#fff" stroke="#bcd6f5"/><text x="908" y="68" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#0a5fb4">5. Show</text><text x="908" y="88" font-family="system-ui,Arial" font-size="11.5" fill="#5a6572">in your browser</text></g><line x1="194" y1="72" x2="214" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="412" y1="72" x2="432" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="630" y1="72" x2="650" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/><line x1="848" y1="72" x2="868" y2="72" stroke="#0084ff" stroke-width="2" marker-end="url(#ar)"/></svg><figcaption>図1:画像を選んでからローカルでメタ情報を読み取るまでの流れ(通信なし)</figcaption></figure>
+<h2>EXIF メタ情報とは何か、どう読まれるか</h2>
+<p>EXIF(Exchangeable Image File Format)は、カメラやスマホが写真に書き込むメタ情報で、JPEG・TIFF・一部の HEIC によく含まれます。多くは JPEG の APP1 セグメント内に、TIFF の IFD ディレクトリ構造で、カメラのメーカー・機種・撮影日時・露出・絞り・ISO・焦点距離を保持し、ときに GPS の緯度経度も含みます。スクリーンショットや Web 圧縮画像、多くの PNG は EXIF が削除されています。</p>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ja.webp"><img src="/img/board_ja.png" alt="JPEG ファイル構造の図。EXIF メタ情報は APP1 セグメントにある" decoding="async" loading="lazy" width="1120" height="640"></picture><figcaption>図:JPEG ファイルの構造 — EXIF は APP1 セグメントの TIFF ディレクトリ内にある</figcaption></figure>
+<figure class="svgfig"><svg viewBox="0 0 1100 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JPEG file structure: EXIF in APP1 segment"><rect x="2" y="2" width="1096" height="196" rx="14" fill="#fbfcfd" stroke="#e6ebf0"/><text x="24" y="30" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#11161c">JPEG file layout (bytes, left to right)</text><rect x="24" y="48" width="90" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="34" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOI FFD8</text><rect x="118" y="48" width="250" height="46" rx="8" fill="#fff3d6" stroke="#f0d98a"/><text x="128" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP1  Exif\0\0  TIFF</text><rect x="372" y="48" width="150" height="46" rx="8" fill="#eef7ee" stroke="#bfe0bf"/><text x="382" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">APP0 JFIF</text><rect x="526" y="48" width="150" height="46" rx="8" fill="#f3eefb" stroke="#d8c8f0"/><text x="536" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">DQT / DHT</text><rect x="680" y="48" width="250" height="46" rx="8" fill="#eef0f2" stroke="#cfd6dd"/><text x="690" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">SOS  compressed scan</text><rect x="934" y="48" width="142" height="46" rx="8" fill="#e8f0fe" stroke="#bcd6f5"/><text x="944" y="76" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#11161c">EOI FFD9</text><line x1="243" y1="94" x2="243" y2="118" stroke="#caa84a" stroke-width="1.5"/><rect x="118" y="118" width="640" height="64" rx="8" fill="#fffaf0" stroke="#f0d98a"/><text x="130" y="138" font-family="system-ui,Arial" font-size="11.5" font-weight="700" fill="#8a6d1a">Inside APP1 = TIFF directory (IFD)</text><rect x="130" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="138" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD0 Make/Model</text><rect x="256" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="264" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">ExifIFD ISO/f/exp</text><rect x="382" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="390" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">GPS IFD lat/lon</text><rect x="508" y="146" width="118" height="26" rx="6" fill="#fff" stroke="#f0d98a"/><text x="516" y="163" font-family="ui-monospace,Consolas,monospace" font-size="10.5" fill="#6a5410">IFD1 thumbnail</text></svg><figcaption>図2:JPEG ファイルの構造 — EXIF は APP1 セグメントの TIFF ディレクトリ内にあります</figcaption></figure>
+<h2>2026 年の画像フォーマットとメタ情報の推計</h2>
+<section id="i4data" class="estimate"><span class="tag">推計・一次実測ではありません</span><ul><li>2026 年時点の推計:JPEG は依然として Web とカメラ出力で最も一般的なフォーマットで、Web 画像でも上位を占めます。</li><li>2026 年時点の推計:2017 年以降 iPhone は既定で HEIC 撮影となり、近年の機種は主に HEIC を出力するため、Windows では変換が必要なことが多いです。</li><li>2026 年時点の推計:Web 画像での WebP・AVIF の採用は増え続けていますが、カメラ側ではまだ少数です。</li><li>2026 年時点の推計:スマホ 1 枚の写真は 2〜5 MB・1200 万〜5000 万画素が一般的で、SNS にアップすると再圧縮され EXIF が削除されることが多いです。</li></ul></section>
+<h2>よくある質問</h2>
+<details class="faq"><summary>画像はサーバーにアップロードされますか?</summary><p>いいえ。ブラウザの FileReader API でローカルに読み取り・解析するため、画像は端末から出ず、どのサーバーにもアップロードされません。</p></details><details class="faq"><summary>なぜ私の画像に EXIF がないのですか?</summary><p>スクリーンショット、Web からダウンロードして再圧縮された画像、多くの PNG には通常 EXIF がありません。SNS もアップロード時にプライバシー保護のため EXIF を削除します。</p></details><details class="faq"><summary>拡張子と「実フォーマット」が違うのはなぜ?</summary><p>拡張子はファイル名の一部にすぎず、自由に変えられます。本ツールはファイル先頭の署名バイトを読むため、.png を .jpg に変えても正しく判定します。</p></details><details class="faq"><summary>撮影場所は分かりますか?</summary><p>写真が GPS 情報を保持していれば(スマホの未編集オリジナルに多い)、座標を表示します。SNS で圧縮された画像はたいてい GPS がありません。</p></details><details class="faq"><summary>HEIC / RAW に対応していますか?</summary><p>署名で HEIC/HEIF などを判定しファイル情報を表示します。ブラウザの HEIC デコード対応は限定的で、サムネイルは表示されないことがあります。Windows で快適に見るには 2345看图王 が使えます。</p></details><details class="faq"><summary>データは正確ですか?</summary><p>フォーマット署名・サイズ・EXIF 項目はファイルから直接読むため信頼できます。「2026 推計」の節は傾向推計で、一次実測ではないと明記しています。</p></details>
+<div class="related"><h2>関連リンク</h2>
+<ul><li><a class="cta" href="https://viewer2345.com/download/">2345看图王(Windows 公式版)をダウンロード</a></li><li><a href="https://www.cipa.jp/std/std-sec_j.html" rel="nofollow noopener" target="_blank">Exif 規格(CIPA DC-008)</a></li><li><a href="https://ja.wikipedia.org/wiki/Exif" rel="nofollow noopener" target="_blank">ウィキペディア:Exif</a></li><li><a href="https://en.wikipedia.org/wiki/List_of_file_signatures" rel="nofollow noopener" target="_blank">Wikipedia: List of file signatures</a></li><li><a href="https://developer.mozilla.org/ja/docs/Web/API/FileReader" rel="nofollow noopener" target="_blank">MDN:FileReader API</a></li><li><a href="https://learn.microsoft.com/ja-jp/windows/win32/wic/-wic-about-windows-imaging-codec" rel="nofollow noopener" target="_blank">Microsoft:Windows イメージング コンポーネント(WIC)</a></li><li><a href="https://support.apple.com/ja-jp/HT207022" rel="nofollow noopener" target="_blank">Apple:HEIF/HEVC について</a></li></ul></div>
+</main>
+<footer>Exif 規格(CIPA DC-008)、Wikipedia のファイル署名一覧、MDN FileReader ドキュメント、Microsoft/Apple 公式サポートを基に整理。フォーマット署名と EXIF 項目はファイルから直接読み取ります。本ページはオープンソースのツールで、参考用です。<br><a href="/about/">編集部</a> · 開源 / open source · MIT</footer>
+</div>
+<script>window.VL={"basic": "基本情報", "exifhead": "EXIF メタ情報", "noexif": "この画像に EXIF メタ情報はありません(スクリーンショット・PNG・Web 圧縮画像によくあります)。", "filename": "ファイル名", "format": "実フォーマット", "ext_mismatch": "(拡張子と署名が不一致)", "dimensions": "サイズ(px)", "megapixels": "メガピクセル", "aspect": "アスペクト比", "filesize": "ファイルサイズ", "modified": "更新日時", "colortype": "色の種類", "bitdepth": "ビット深度", "alpha": "透過チャンネルあり", "make": "カメラのメーカー(Make)", "model": "カメラの機種(Model)", "datetime": "撮影日時(DateTimeOriginal)", "exposure": "露出時間(ExposureTime)", "fnumber": "絞り(FNumber)", "iso": "感度(ISO)", "focal": "焦点距離(FocalLength)", "lens": "レンズ(LensModel)", "orientation": "向き(Orientation)", "software": "ソフトウェア(Software)", "gps": "GPS 座標", "yes": "あり", "no": "なし"};</script>
+<script src="/app.js"></script>
+</body></html>
